@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { User, Code, Terminal, Cpu, FileText, Award, Server, Send, Link, Globe, MapPin, FileSignatureIcon } from "lucide-react";
+import { User, Code, Terminal, Cpu, FileText, Award, Server, Send, Link, Globe, MapPin, FileSignatureIcon, GraduationCap } from "lucide-react";
 import { RadarChart, Radar, PolarGrid, PolarAngleAxis, PolarRadiusAxis, ResponsiveContainer } from "recharts";
 import { BsLinkedin } from "react-icons/bs";
 import { FaLinkedin } from "react-icons/fa";
@@ -199,6 +199,23 @@ export default function Profile() {
                                             Experience
                                         </p>
                                         <p>4+ Years in Software Engineering</p>
+                                    </div>
+                                    <div>
+                                        <p
+                                            className="text-green-500 
+                      drop-shadow-[0_0_5px_rgba(34,197,94,0.6)]"
+                                        >
+                                            Education
+                                        </p>
+
+                                        <p className="flex items-center">
+                                            <GraduationCap className="mr-2 text-green-300" size={16} />
+                                            B.S. Software Engineering
+                                        </p>
+                                        <p className="flex items-center">
+                                            <MapPin className="mr-2 text-green-300" size={16} />
+                                            St. Mary's University (San Antonio, TX)
+                                        </p>
                                     </div>
                                 </div>
                             </div>
