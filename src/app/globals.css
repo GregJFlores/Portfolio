@@ -1,26 +1,74 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+.scanlines:before,
+.scanlines:after {
+    display: block;
+    pointer-events: none;
+    content: "";
+    position: absolute;
+}
+.scanlines:before {
+    width: 100%;
+    height: 2px;
+    z-index: 2147483649;
+    background: rgba(0, 0, 0, 0.2);
+    opacity: 0.75;
+    animation: scanline 10s linear infinite;
+}
+.scanlines:after {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 2147483648;
+    background: linear-gradient(to bottom, transparent 65%, rgba(100, 0, 0, 0.1) 51%);
+    background-size: 100% 10px;
+    animation: scanlines 1s steps(24) infinite;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* ANIMATE UNIQUE SCANLINE */
+@keyframes scanline {
+    0% {
+        transform: translate3d(0, 200000%, 0);
+    }
+}
+@keyframes scanlines {
+    0% {
+        background-position: 0 50%;
+    }
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Glow animations and other styles from previous artifact */
+@keyframes pulse-glow {
+    0%,
+    100% {
+        text-shadow: 0 0 5px rgba(34, 197, 94, 0.6);
+        opacity: 0.9;
+    }
+    50% {
+        text-shadow: 0 0 15px rgba(34, 197, 94, 1);
+        opacity: 1;
+    }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.intense-glow-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.intense-glow-container::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at center, rgba(34, 197, 94, 0.4) 0%, transparent 70%);
+    opacity: 0.5;
+    pointer-events: none;
+    animation: pulse 3s infinite;
 }
