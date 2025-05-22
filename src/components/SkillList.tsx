@@ -1,4 +1,5 @@
 import React from "react";
+import * as motion from "motion/react-client";
 
 export type SkillCategory = {
     name: string;
@@ -11,7 +12,15 @@ type Props = {
 
 const SkillList = (props: Props) => {
     return (
-        <div className="space-y-2">
+        <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{
+                duration: 0.8,
+                scale: { type: "spring", visualDuration: 0.4, bounce: 0.5 },
+            }}
+            className="space-y-2"
+        >
             {props.skills.map((category, index) => (
                 <div key={index}>
                     <p
@@ -30,7 +39,7 @@ const SkillList = (props: Props) => {
                     </div>
                 </div>
             ))}
-        </div>
+        </motion.div>
     );
 };
 

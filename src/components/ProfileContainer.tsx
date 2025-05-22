@@ -1,4 +1,5 @@
 import React from "react";
+import * as motion from "motion/react-client";
 
 type Props = {
     children: React.ReactNode;
@@ -6,7 +7,15 @@ type Props = {
 
 const ProfileContainer = (props: Props) => {
     return (
-        <div className=" text-green-300 font-mono tracking-tight overflow-hidden">
+        <motion.div
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{
+                duration: 0.4,
+                scale: { type: "spring", visualDuration: 0.4, bounce: 0.2 },
+            }}
+            className=" text-green-300 font-mono tracking-tight overflow-hidden"
+        >
             <div
                 className="w-full md:w-6xl mx-auto bg-gray-900 bg-opacity-70 border-4 border-green-500 rounded-lg overflow-hidden 
         relative
@@ -14,7 +23,7 @@ const ProfileContainer = (props: Props) => {
             >
                 {props.children}
             </div>
-        </div>
+        </motion.div>
     );
 };
 

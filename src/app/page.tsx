@@ -15,6 +15,7 @@ import TypedText from "@/components/TypedText";
 import WorkExperienceGrid, { WorkExperienceItem } from "@/components/WorkExperienceGrid";
 import { GraduationCap, MapPin } from "lucide-react";
 import { useEffect, useState } from "react";
+import * as motion from "motion/react-client";
 
 export default function Home() {
     const [loadingDots, setLoadingDots] = useState(".");
@@ -43,51 +44,69 @@ export default function Home() {
             {isLoading && (
                 <div className="fixed inset-0 bg-gray-900 bg-opacity-80 z-50 flex items-center justify-center">
                     <div className="text-green-300 font-mono text-lg">
-                        <TypedText text={`Loading${loadingDots}`} speed={100} showPrompt={false} />
+                        <TypedText text={`Loading${loadingDots}`} speed={100} showPrompt={false} showCursorBlink />
                     </div>
                 </div>
             )}
 
-            <ProfileContainer>
-                <ProfileHeader />
-                <ProfileNavigation activeTab={activeTab} setActiveTab={setActiveTab} tabs={tabs} />
-                <ProfileContentContainer>
-                    {activeTab === "About Me" && <AboutMe />}
-                    {activeTab === "Skills" && <Skills />}
-                    {activeTab === "Experience" && <WorkExperience />}
-                </ProfileContentContainer>
-                <Footer />
-            </ProfileContainer>
+            {!isLoading && (
+                <ProfileContainer>
+                    <ProfileHeader />
+                    <ProfileNavigation activeTab={activeTab} setActiveTab={setActiveTab} tabs={tabs} />
+                    <ProfileContentContainer>
+                        {activeTab === "About Me" && <AboutMe />}
+                        {activeTab === "Skills" && <Skills />}
+                        {activeTab === "Experience" && <WorkExperience />}
+                    </ProfileContentContainer>
+                    <Footer />
+                </ProfileContainer>
+            )}
         </>
     );
 }
 
 function AboutMe() {
     return (
-        <div className="grid md:grid-cols-3 gap-6">
+        <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{
+                duration: 0.4,
+                scale: { type: "spring", visualDuration: 0.4, bounce: 0.5 },
+            }}
+            className="grid md:grid-cols-3 gap-6"
+        >
             <div className="col-span-2 space-y-4">
                 <ProfileSectionTitle text="About Me" />
-                <TypedText
-                    text={`Forward-thinking Software Engineer with background working effectively in dynamic environments. Adept at creating streamlined solutions and
-                                    delivering efficient results. Passionate about problem-solving and utilizing technology to drive excellence.`}
-                    speed={10}
-                />
-                <ProfileInformation
-                    items={[
-                        { label: "Location", value: "San Antonio, TX", icon: MapPin },
-                        { label: "Experience", value: "4+ Years in Software Engineering" },
-                        {
-                            label: "Education",
-                            value: (
-                                <div>
-                                    <p>B.S. Software Engineering</p>
-                                    <p>San Antonio, TX</p>
-                                </div>
-                            ),
-                            icon: GraduationCap,
-                        },
-                    ]}
-                />
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{
+                        duration: 0.8,
+                        scale: { type: "spring", visualDuration: 0.4, bounce: 0.5 },
+                    }}
+                >
+                    <p>
+                        Forward-thinking Software Engineer with background working effectively in dynamic environments. Adept at creating streamlined solutions and delivering
+                        efficient results. Passionate about problem-solving and utilizing technology to drive excellence.
+                    </p>
+                    <ProfileInformation
+                        items={[
+                            { label: "Location", value: "San Antonio, TX", icon: MapPin },
+                            { label: "Experience", value: "4+ Years in Software Engineering" },
+                            {
+                                label: "Education",
+                                value: (
+                                    <div>
+                                        <p>B.S. Software Engineering</p>
+                                        <p>San Antonio, TX</p>
+                                    </div>
+                                ),
+                                icon: GraduationCap,
+                            },
+                        ]}
+                    />
+                </motion.div>
             </div>
             <div className="space-y-6 col-span-2 md:col-span-1">
                 <ProfileHighlightsList listTitle="Awards">
@@ -112,7 +131,7 @@ function AboutMe() {
                     />
                 </ProfileHighlightsList>
             </div>
-        </div>
+        </motion.div>
     );
 }
 
@@ -139,13 +158,21 @@ function Skills() {
     ];
 
     return (
-        <div className="grid md:grid-cols-2 gap-6">
+        <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{
+                duration: 0.4,
+                scale: { type: "spring", visualDuration: 0.4, bounce: 0.5 },
+            }}
+            className="grid md:grid-cols-2 gap-6"
+        >
             <div className="col-span-1 space-y-4">
                 <ProfileSectionTitle text="Technical Skills" />
                 <SkillList skills={skills} />
             </div>
             <SkillRadarChart skillData={skillData} />
-        </div>
+        </motion.div>
     );
 }
 
@@ -208,9 +235,17 @@ function WorkExperience() {
     ];
 
     return (
-        <div className="space-y-6">
+        <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{
+                duration: 0.4,
+                scale: { type: "spring", visualDuration: 0.4, bounce: 0.5 },
+            }}
+            className="space-y-6"
+        >
             <ProfileSectionTitle text="Work Experience" />
             <WorkExperienceGrid workExperience={workExperience} />
-        </div>
+        </motion.div>
     );
 }

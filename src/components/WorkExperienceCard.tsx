@@ -1,8 +1,9 @@
 import React, { useCallback } from "react";
 import { WorkExperienceItem } from "./WorkExperienceGrid";
-
+import * as motion from "motion/react-client";
 type Props = {
     job: WorkExperienceItem;
+    index: number;
 };
 
 const WorkExperienceCard = (props: Props) => {
@@ -60,7 +61,16 @@ const WorkExperienceCard = (props: Props) => {
         [props.job.startDate, props.job.endDate]
     );
     return (
-        <div className="border-2 border-green-500 p-4 intense-glow-container">
+        <motion.div
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{
+                duration: 0.4,
+                delay: props.index * 0.1,
+                scale: { type: "spring", visualDuration: 0.4, bounce: 0.2 },
+            }}
+            className="border-2 border-green-500 p-4 intense-glow-container"
+        >
             <h3
                 className="text-lg mb-2 text-green-100
                         drop-shadow-[0_0_6px_rgba(34,197,94,0.7)]"
@@ -97,7 +107,7 @@ const WorkExperienceCard = (props: Props) => {
                     </div>
                 </div>
             )}
-        </div>
+        </motion.div>
     );
 };
 

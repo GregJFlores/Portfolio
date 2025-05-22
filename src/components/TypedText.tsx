@@ -7,9 +7,10 @@ interface TypedTextProps {
     speed?: number; // Typing speed (ms per character)
     showPrompt?: boolean; // Whether to show a command prompt
     promptText?: string; // Custom prompt text
+    showCursorBlink?: boolean; // Whether the cursor is visible
 }
 
-const TypedText = ({ text, speed = 25, showPrompt = false, promptText = "[system@portfolio ~]$" }: TypedTextProps) => {
+const TypedText = ({ text, speed = 25, showPrompt = false, promptText = "[system@portfolio ~]$", showCursorBlink = false }: TypedTextProps) => {
     const [typingText, setTypingText] = useState("");
     const [typingComplete, setTypingComplete] = useState(false);
     const [cursorVisible, setCursorVisible] = useState(true);
@@ -28,16 +29,25 @@ const TypedText = ({ text, speed = 25, showPrompt = false, promptText = "[system
 
     // Blinking cursor effect
     useEffect(() => {
+        if (!showCursorBlink) {
+            return;
+        }
         const interval = setInterval(() => {
             setCursorVisible((v) => !v);
         }, 500);
         return () => clearInterval(interval);
     }, []);
 
+    useEffect(() => {
+        if (!showCursorBlink && typingComplete) {
+            setCursorVisible(false);
+        }
+    }, [showCursorBlink, typingComplete]);
+
     return (
-        <div className="terminal-container relative">
-            {showPrompt && <div className="absolute -top-5 left-0 text-green-500 opacity-50 text-sm">{promptText}</div>}
-            <p className="text-green-300 drop-shadow-[0_0_4px_rgba(34,197,94,0.5)]">
+        <div className="relative">
+            {showPrompt && <div className="absolute -top-5 left-0 opacity-50 text-sm">{promptText}</div>}
+            <p className="">
                 {typingText}
                 {cursorVisible && <span className="text-green-100">_</span>}
             </p>

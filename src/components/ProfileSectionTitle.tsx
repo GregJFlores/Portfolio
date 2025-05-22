@@ -1,4 +1,5 @@
 import React from "react";
+import TypedText from "./TypedText";
 
 type Props = {
     text: string;
@@ -12,7 +13,7 @@ const ProfileSectionTitle = (props: Props) => {
                     text-green-100
                     drop-shadow-[0_0_10px_rgba(34,197,94,0.9)]"
             >
-                {props.text}
+                <TypedText text={props.text} />
             </h2>
         </div>
     );

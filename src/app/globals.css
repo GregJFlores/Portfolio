@@ -56,6 +56,7 @@
 }
 
 .intense-glow-container {
+    will-change: transform, opacity;
     position: relative;
     overflow: hidden;
 }

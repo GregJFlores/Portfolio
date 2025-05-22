@@ -19,7 +19,7 @@ const WorkExperienceGrid = (props: Props) => {
     return (
         <div className="grid md:grid-cols-3 gap-6">
             {props.workExperience.map((job, index) => (
-                <WorkExperienceCard key={index} job={job} />
+                <WorkExperienceCard key={index} job={job} index={index} />
             ))}
         </div>
     );

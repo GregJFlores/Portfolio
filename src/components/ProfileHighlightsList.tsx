@@ -1,5 +1,5 @@
 import React from "react";
-
+import * as motion from "motion/react-client";
 type Props = {
     listTitle: string;
     children: React.ReactNode;
@@ -7,7 +7,15 @@ type Props = {
 
 const ProfileHighlightsList = (props: Props) => {
     return (
-        <div className="border-2 border-green-500 p-4 intense-glow-container">
+        <motion.div
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{
+                duration: 0.4,
+                scale: { type: "spring", visualDuration: 0.4, bounce: 0.2 },
+            }}
+            className="border-2 border-green-500 p-4 intense-glow-container"
+        >
             <h3
                 className="text-lg uppercase mb-4 border-b border-green-700 pb-2 
                     text-green-100
@@ -16,7 +24,7 @@ const ProfileHighlightsList = (props: Props) => {
                 {props.listTitle}
             </h3>
             <ul className="space-y-4 text-sm">{props.children}</ul>
-        </div>
+        </motion.div>
     );
 };
 
