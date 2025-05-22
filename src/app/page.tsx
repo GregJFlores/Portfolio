@@ -99,6 +99,7 @@ function AboutMe() {
                                 value: (
                                     <div>
                                         <p>B.S. Software Engineering</p>
+                                        <p>St. Mary's University</p>
                                         <p>San Antonio, TX</p>
                                     </div>
                                 ),
