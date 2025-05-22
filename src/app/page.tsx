@@ -85,6 +85,7 @@ function AboutMe() {
                         duration: 0.8,
                         scale: { type: "spring", visualDuration: 0.4, bounce: 0.5 },
                     }}
+                    className="space-y-4"
                 >
                     <p>
                         Forward-thinking Software Engineer with background working effectively in dynamic environments. Adept at creating streamlined solutions and delivering
