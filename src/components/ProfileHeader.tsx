@@ -1,4 +1,5 @@
 import { Send } from "lucide-react";
+import Image from "next/image";
 import React from "react";
 import { FaLinkedin } from "react-icons/fa";
 
@@ -9,13 +10,10 @@ const ProfileHeader = () => {
           relative z-10"
         >
             <div className="flex items-center space-x-4">
-                <img
-                    src={
-                        "https://media.licdn.com/dms/image/v2/D5603AQHgCG30Gb9HnA/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1706481459792?e=1752710400&v=beta&t=X6lrnt4NzQkCzZInIu7ctfXxS2YzHNb56B2nI_1dx38"
-                    }
-                    alt="Profile"
-                    className="w-16 h-16 rounded-full border-2 border-green-500 shadow-lg drop-shadow-[0_0_8px_rgba(34,197,94,1)]"
-                />
+                <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-green-500 shadow-lg drop-shadow-[0_0_8px_rgba(34,197,94,1)]">
+                    <Image src="/profile_pic.JPG" alt="Profile" fill className="object-cover" />
+                </div>
+
                 <div>
                     <h1
                         className="text-2xl font-bold text-green-100 

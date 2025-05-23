@@ -114,7 +114,10 @@ function AboutMe() {
                 <ProfileHighlightsList listTitle="Awards">
                     <ProfileAwardListItem
                         title="Technical Innovation - CACI Champions"
-                        imageUrl="https://media.licdn.com/dms/image/v2/D4D2DAQEIAikqEEHP5Q/profile-treasury-image-shrink_800_800/profile-treasury-image-shrink_800_800/0/1712846920286?e=1747911600&v=beta&t=Nr_PshGQxvVLtoIzPreESffAl4qNa7UJr1l93BDkuuc"
+                        imageUrl="/caci_champ_award_2024.JPG"
+                        width={200}
+                        height={200}
+                        description="CACI Champions Award for Technical Innovation"
                         link="https://www.linkedin.com/feed/update/urn:li:activity:7184549331754983424/"
                     />
                 </ProfileHighlightsList>

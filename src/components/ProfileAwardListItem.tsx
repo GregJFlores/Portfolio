@@ -1,9 +1,13 @@
+import Image from "next/image";
 import React from "react";
 
 type Props = {
     title: string;
     link: string;
     imageUrl: string;
+    description: string;
+    width: number;
+    height: number;
 };
 
 const ProfileAwardListItem = (props: Props) => {
@@ -15,7 +19,11 @@ const ProfileAwardListItem = (props: Props) => {
                     View Award{" "}
                 </a>
             </div>
-            {props.imageUrl && <img src={props.imageUrl} alt="Award" className="w-auto h-16 ml-2 rounded-lg shadow-lg hover:h-40 transition-all duration-500" />}
+            {props.imageUrl && (
+                <div className="relative w-30 h-20 rounded-md overflow-hidden border-2 border-green-500 shadow-lg drop-shadow-[0_0_8px_rgba(34,197,94,1)]">
+                    <Image src={props.imageUrl} alt={props.description} fill className="object-cover" />
+                </div>
+            )}
         </li>
     );
 };
