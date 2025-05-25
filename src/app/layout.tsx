@@ -2,6 +2,11 @@ import type { Metadata } from "next";
 import { JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { baseMetadata } from "../lib/metadata";
+import ProfileContainer from "@/components/ProfileContainer";
+import ProfileHeader from "@/components/ProfileHeader";
+import ProfileNavigation, { HeaderLink } from "@/components/ProfileNavigation";
+import ProfileContentContainer from "@/components/ProfileContentContainer";
+import Footer from "@/components/Footer";
 
 export const metadata = baseMetadata;
 
@@ -10,6 +15,14 @@ const jetBrainsMonoTitle = JetBrains_Mono({
     subsets: ["latin"],
     variable: "--jbmono-title",
 });
+
+const links: HeaderLink[] = [
+    { label: "About Me", href: "about" },
+    { label: "Skills", href: "skills" },
+    { label: "Experience", href: "experience" },
+    { label: "Projects", href: "projects" },
+    { label: "Contact", href: "contact" },
+];
 
 export default function RootLayout({
     children,
@@ -20,7 +33,7 @@ export default function RootLayout({
         <html lang="en" className="bg-gray-900 text-gray-100">
             <head>
                 {/* Additional SEO tags */}
-                <link rel="canonical" href="https://www.gregflores.com" />
+                <link rel="canonical" href="https://www.gregjflores.com" />
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <meta name="theme-color" content="#10B981" />
                 <meta name="msapplication-TileColor" content="#10B981" />
@@ -75,7 +88,14 @@ export default function RootLayout({
                     }}
                 />
             </head>
-            <body className={`${jetBrainsMonoTitle.variable} flex items-center justify-center min-h-screen`}>{children}</body>
+            <body className={`${jetBrainsMonoTitle.variable} flex items-center justify-center min-h-screen`}>
+                <ProfileContainer>
+                    <ProfileHeader />
+                    <ProfileNavigation links={links} />
+                    <ProfileContentContainer>{children}</ProfileContentContainer>
+                    <Footer />
+                </ProfileContainer>
+            </body>
         </html>
     );
 }

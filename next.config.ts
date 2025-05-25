@@ -130,7 +130,11 @@ const nextConfig: NextConfig = {
     // Redirects for SEO (if needed)
     async redirects() {
         return [
-            // Add any redirects here if needed
+            {
+                source: "/",
+                destination: "/about",
+                permanent: true, // Use false for temporary redirect (307)
+            },
         ];
     },
 

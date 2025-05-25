@@ -66,7 +66,7 @@ const WorkExperienceCard = (props: Props) => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{
                 duration: 0.4,
-                delay: props.index * 0.1,
+                delay: props.index * 0.15,
                 scale: { type: "spring", visualDuration: 0.4, bounce: 0.2 },
             }}
             className="border-2 border-green-500 p-4 intense-glow-container"
