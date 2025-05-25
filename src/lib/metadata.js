@@ -32,7 +32,7 @@ export const baseMetadata = {
     },
     metadataBase: new URL("https://www.gregjflores.com"),
     alternates: {
-        canonical: "/",
+        canonical: "/about",
     },
     openGraph: {
         type: "website",
