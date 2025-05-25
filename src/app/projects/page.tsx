@@ -26,6 +26,18 @@ function Projects() {
                 "Developed the hardware abstraction layer that controls the various instruments inside the PSXR Test Station. This test station was designed to test legacy LRUs (Line Replaceable Units) for the US Air Force's E-3 Aircraft.",
             technologies: ["C", "NI TestStand", "NI LabWindows/CVI"],
         },
+        {
+            title: "Multi-Platform Automatic Tester (MPAT)",
+            type: "Work",
+            company: "CACI International Inc.",
+            imageUrl: "/mpat.jpg",
+            link: {
+                href: "https://www.caci.com/automatic-test-systems",
+                label: "Learn More",
+            },
+            description: "Developed the hardware abstraction layer that controls the various instruments inside the MPAT Test Station. ",
+            technologies: ["C", "NI TestStand", "NI LabWindows/CVI"],
+        },
     ];
 
     return (
