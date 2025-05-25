@@ -14,7 +14,7 @@ const page = (props: Props) => {
 
 export default page;
 
-export function AboutMe() {
+function AboutMe() {
     return (
         <motion.div
             initial={{ opacity: 0 }}
