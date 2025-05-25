@@ -33,8 +33,6 @@ export default function RootLayout({
         <html lang="en" className="bg-gray-900 text-gray-100">
             <head>
                 {/* Additional SEO tags */}
-                <link rel="canonical" href="https://www.gregjflores.com" />
-                <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <meta name="theme-color" content="#10B981" />
                 <meta name="msapplication-TileColor" content="#10B981" />
 

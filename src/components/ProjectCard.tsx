@@ -29,7 +29,7 @@ const ProjectCard = (props: Props) => {
                 </h3>
                 {props.project.imageUrl && (
                     <div className="rounded-sm overflow-hidden border-2 border-green-500 shadow-lg drop-shadow-[0_0_8px_rgba(34,197,94,1)]">
-                        <Image src={props.project.imageUrl} alt={"project image"} fill className="object-cover" sizes="64px" />
+                        <Image src={props.project.imageUrl} alt={"project image"} width={100} height={50} className="w-full h-auto object-cover" />
                     </div>
                 )}
             </div>
@@ -45,7 +45,7 @@ const ProjectCard = (props: Props) => {
                 </div>
             )}
             {props.project.link && (
-                <div className="text-xs mb-2">
+                <div className="mb-2">
                     <a href={props.project.link.href} target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:underline">
                         {props.project.link.label || props.project.link.href}
                     </a>
