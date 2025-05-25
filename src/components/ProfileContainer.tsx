@@ -17,7 +17,7 @@ const ProfileContainer = (props: Props) => {
             className=" text-green-300 font-mono tracking-tight overflow-hidden"
         >
             <div
-                className="w-full md:w-6xl mx-auto bg-gray-900 bg-opacity-70 border-4 border-green-500 rounded-lg overflow-hidden 
+                className="w-full lg:w-6xl mx-auto bg-gray-900 bg-opacity-70 border-4 border-green-500  overflow-hidden 
         relative
         shadow-[0_0_50px_rgba(34,197,94,0.4)]"
             >

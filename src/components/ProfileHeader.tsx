@@ -11,7 +11,7 @@ const ProfileHeader = () => {
         >
             <div className="flex items-center space-x-4">
                 <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-green-500 shadow-lg drop-shadow-[0_0_8px_rgba(34,197,94,1)]">
-                    <Image src="/profile_pic.JPG" alt="Profile" fill className="object-cover" />
+                    <Image src="/profile_pic.JPG" alt="Profile" fill className="object-cover" sizes="64px" priority />
                 </div>
 
                 <div>

@@ -20,8 +20,8 @@ const ProfileAwardListItem = (props: Props) => {
                 </a>
             </div>
             {props.imageUrl && (
-                <div className="relative w-30 h-20 rounded-md overflow-hidden border-2 border-green-500 shadow-lg drop-shadow-[0_0_8px_rgba(34,197,94,1)]">
-                    <Image src={props.imageUrl} alt={props.description} fill className="object-cover" />
+                <div className="relative w-30 h-20 rounded-sm overflow-hidden border-2 border-green-500 shadow-lg drop-shadow-[0_0_8px_rgba(34,197,94,1)]">
+                    <Image src={props.imageUrl} alt={props.description} fill className="object-cover" sizes="64px" />
                 </div>
             )}
         </li>

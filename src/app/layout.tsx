@@ -88,7 +88,7 @@ export default function RootLayout({
                     }}
                 />
             </head>
-            <body className={`${jetBrainsMonoTitle.variable} flex items-center justify-center min-h-screen`}>
+            <body className={`${jetBrainsMonoTitle.variable} flex items-start md:items-center justify-center min-h-screen`}>
                 <ProfileContainer>
                     <ProfileHeader />
                     <ProfileNavigation links={links} />

@@ -97,7 +97,7 @@ const WorkExperienceCard = (props: Props) => {
             )}
             {props.job.technologies && (
                 <div className="border-t border-green-700 pt-2">
-                    <p className="text-green-500 text-xs">Technologies:</p>
+                    <p className="text-green-500 text-xs">Technologies/Skills:</p>
                     <div className="flex flex-wrap gap-2 mt-1">
                         {props.job.technologies.map((tech, techIndex) => (
                             <span key={techIndex} className="bg-green-800 bg-opacity-50 px-2 py-1 rounded text-xs">
