@@ -50,7 +50,7 @@ function Projects() {
             }}
             className="space-y-6"
         >
-            <ProfileSectionTitle text="Work Experience" />
+            <ProfileSectionTitle text="Projects" />
             <ProjectsGrid projects={projects} />
         </motion.div>
     );
