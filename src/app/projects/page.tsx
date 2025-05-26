@@ -38,6 +38,16 @@ function Projects() {
             description: "Developed the hardware abstraction layer that controls the various instruments inside the MPAT Test Station. ",
             technologies: ["C", "NI TestStand", "NI LabWindows/CVI"],
         },
+        {
+            title: "Next Weather App",
+            type: "Personal",
+            githubUrl: "https://github.com/GregJFlores/NextWeather",
+            imageUrl: "/next-weather.jpg",
+            liveUrl: "https://next-weather-kohl.vercel.app/",
+            description:
+                "A weather application built with Next.js and Tailwind CSS that provides allows the user to query the current weather and five day forecast. It uses the OpenWeatherMap API to fetch weather data.",
+            technologies: ["Next.js", "Tailwind CSS", "OpenWeatherMap API"],
+        },
     ];
 
     return (
