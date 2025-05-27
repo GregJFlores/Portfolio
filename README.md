@@ -8,7 +8,7 @@ A terminal themed portfolio website built with Next.js to showcase my projects, 
 -   **Language**: [TypeScript](https://www.typescriptlang.org/)
 -   **Styling**: [Tailwind CSS](https://tailwindcss.com/)
 -   **UI Components**: [Headless UI](https://headlessui.com/)
--   **Icons**: [Lucide React](https://lucide.dev/)
+-   **Icons**: [Lucide React](https://lucide.dev/), [React Icons](https://react-icons.github.io/react-icons/)
 -   **Animations**: [Framer Motion](https://www.framer.com/motion/)
 -   **Deployment**: [Vercel](https://vercel.com/)
 
@@ -19,4 +19,4 @@ A terminal themed portfolio website built with Next.js to showcase my projects, 
 
 ## 🚀 Deployment
 
-The application is deployed on Vercel with automatic deployments from the main branch.
+The application is deployed on Vercel with automatic deployments from the main branch. [Live Site](https://www.gregjflores.com/about)
