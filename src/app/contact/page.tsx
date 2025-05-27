@@ -40,6 +40,12 @@ function Contact() {
                         linkedin.com/in/gregflores
                     </a>
                 </li>
+                <li>
+                    GitHub:{" "}
+                    <a href="https://github.com/GregJFlores" className="text-blue-500 hover:underline">
+                        https://github.com/GregJFlores
+                    </a>
+                </li>
             </ul>
             <p>Feel free to reach out for collaboration, questions, or just to say hello!</p>
         </motion.div>

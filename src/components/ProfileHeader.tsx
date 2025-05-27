@@ -1,7 +1,7 @@
 import { Send } from "lucide-react";
 import Image from "next/image";
 import React from "react";
-import { FaLinkedin } from "react-icons/fa";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 const ProfileHeader = () => {
     return (
@@ -37,6 +37,9 @@ const ProfileHeader = () => {
 
                 <a href="https://www.linkedin.com/in/gregjflores/" target="_blank" rel="noopener noreferrer" className="hover:text-green-200 transition-colors">
                     <FaLinkedin className="drop-shadow-[0_0_6px_rgba(34,197,94,0.7)]" size={24} />
+                </a>
+                <a href="https://github.com/GregJFlores" target="_blank" rel="noopener noreferrer" className="hover:text-green-200 transition-colors">
+                    <FaGithub className="drop-shadow-[0_0_6px_rgba(34,197,94,0.7)]" size={24} />
                 </a>
             </div>
         </div>
