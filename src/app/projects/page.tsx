@@ -44,6 +44,15 @@ function Projects() {
             technologies: ["C", "NI TestStand", "NI LabWindows/CVI"],
         },
         {
+            title: "Portfolio Website",
+            type: "Personal",
+            githubUrl: "https://github.com/GregJFlores/Portfolio",
+            imageUrl: "/portfolio.jpg",
+            liveUrl: "https://www.gregjflores.com/about",
+            description: "A terminal themed portfolio website built with Next.js to showcase my projects, skills, and professional experience.",
+            technologies: ["Next.js", "Tailwind CSS"],
+        },
+        {
             title: "Weather App",
             type: "Personal",
             githubUrl: "https://github.com/GregJFlores/NextWeather",

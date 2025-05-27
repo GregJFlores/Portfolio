@@ -1,5 +1,3 @@
-// lib/metadata.js - Centralized SEO metadata configuration
-
 export const baseMetadata = {
     title: {
         default: "Gregory Flores - Software Engineer | San Antonio, TX",
