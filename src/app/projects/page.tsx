@@ -5,6 +5,11 @@ import * as motion from "motion/react-client";
 
 type Props = {};
 
+export const metadata = {
+    title: "Projects Portfolio - Gregory Flores",
+    description: "Software development projects showcasing problem-solving skills, technology expertise, and innovative solutions.",
+};
+
 const page = (props: Props) => {
     return <Projects />;
 };
@@ -39,7 +44,7 @@ function Projects() {
             technologies: ["C", "NI TestStand", "NI LabWindows/CVI"],
         },
         {
-            title: "Next Weather App",
+            title: "Weather App",
             type: "Personal",
             githubUrl: "https://github.com/GregJFlores/NextWeather",
             imageUrl: "/next-weather.jpg",

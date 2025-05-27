@@ -52,14 +52,14 @@ const ProjectCard = (props: Props) => {
                 </div>
             )}
             {props.project.liveUrl && (
-                <div className="text-md mb-2">
+                <div className="text-sm mb-2">
                     <a href={props.project.liveUrl} target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:underline">
                         Live Project
                     </a>
                 </div>
             )}
             {props.project.githubUrl && (
-                <div className="text-md mb-2">
+                <div className="text-sm mb-2">
                     <a href={props.project.githubUrl} target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:underline">
                         GitHub Repository
                     </a>

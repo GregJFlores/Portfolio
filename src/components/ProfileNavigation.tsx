@@ -23,7 +23,7 @@ type Props = {
         </div> */
 }
 const ProfileNavigation = (props: Props) => {
-    const [selected, setSelected] = useState<HeaderLink>(props.links[0]);
+    const [selected, setSelected] = useState<HeaderLink>(props.links.find((link) => link.href === usePathname()) || props.links[0]);
 
     const pathname = usePathname();
     const activeHref = pathname.replace("/", "");

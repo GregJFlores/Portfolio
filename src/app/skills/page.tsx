@@ -5,6 +5,11 @@ import * as motion from "motion/react-client";
 import ProfileSectionTitle from "@/components/ProfileSectionTitle";
 type Props = {};
 
+export const metadata = {
+    title: "Technical Skills - Gregory Flores",
+    description: "Technical skills and technologies used by Gregory Flores: programming languages, frameworks, and development tools.",
+};
+
 const skills = (props: Props) => {
     return <Skills />;
 };

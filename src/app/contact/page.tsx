@@ -3,6 +3,11 @@ import React from "react";
 import * as motion from "motion/react-client";
 type Props = {};
 
+export const metadata = {
+    title: "Contact - Gregory Flores",
+    description: "Contact Gregory Flores, Software Engineer in San Antonio, TX. Available for new opportunities and collaborations.",
+};
+
 const page = (props: Props) => {
     return <Contact />;
 };
