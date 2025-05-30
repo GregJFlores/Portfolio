@@ -29,21 +29,23 @@ function Contact() {
             <p>If you would like to get in touch, please reach out via email or connect with me on LinkedIn.</p>
             <ul className="list-disc pl-5">
                 <li>
-                    Email:{" "}
                     <a href="mailto:greg.jflores@gmail.com" className="text-blue-500 hover:underline">
-                        greg.jflores@gmail.com
+                        Email
                     </a>
                 </li>
                 <li>
-                    LinkedIn:{" "}
                     <a href="https://www.linkedin.com/in/gregjflores/" className="text-blue-500 hover:underline">
-                        linkedin.com/in/gregflores
+                        LinkedIn
                     </a>
                 </li>
                 <li>
-                    GitHub:{" "}
                     <a href="https://github.com/GregJFlores" className="text-blue-500 hover:underline">
-                        https://github.com/GregJFlores
+                        GitHub
+                    </a>
+                </li>
+                <li>
+                    <a href="https://x.com/GregJFlores" className="text-blue-500 hover:underline">
+                        X (formerly Twitter)
                     </a>
                 </li>
             </ul>

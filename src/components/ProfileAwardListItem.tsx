@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { Image } from "@imagekit/next";
 import React from "react";
 
 type Props = {
@@ -21,7 +21,15 @@ const ProfileAwardListItem = (props: Props) => {
             </div>
             {props.imageUrl && (
                 <div className="relative w-30 h-20 rounded-sm overflow-hidden border-2 border-green-500 shadow-lg drop-shadow-[0_0_8px_rgba(34,197,94,1)]">
-                    <Image src={props.imageUrl} alt={props.description} fill className="object-cover" sizes="64px" />
+                    <Image
+                        urlEndpoint="https://ik.imagekit.io/gregjflores"
+                        src={props.imageUrl}
+                        alt={props.description}
+                        width={500}
+                        height={500}
+                        className="w-full h-auto object-cover"
+                        transformation={[{ width: 500, height: 500 }]}
+                    />
                 </div>
             )}
         </li>

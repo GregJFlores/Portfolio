@@ -2,7 +2,7 @@ import React, { useCallback } from "react";
 
 import * as motion from "motion/react-client";
 import { ProjectItem } from "./ProjectsGrid";
-import Image from "next/image";
+import { Image } from "@imagekit/next";
 type Props = {
     project: ProjectItem;
     index: number;
@@ -29,7 +29,15 @@ const ProjectCard = (props: Props) => {
                 </h4>
                 {props.project.imageUrl && (
                     <div className="rounded-sm overflow-hidden border-2 border-green-500 shadow-lg drop-shadow-[0_0_8px_rgba(34,197,94,1)]">
-                        <Image src={props.project.imageUrl} alt={"project image"} width={100} height={50} className="w-full h-auto object-cover" />
+                        <Image
+                            urlEndpoint="https://ik.imagekit.io/gregjflores"
+                            src={props.project.imageUrl}
+                            alt={"project image"}
+                            width={500}
+                            height={500}
+                            className="w-full h-auto object-cover"
+                            transformation={[{ width: 500, height: 500 }]}
+                        />
                     </div>
                 )}
             </div>
