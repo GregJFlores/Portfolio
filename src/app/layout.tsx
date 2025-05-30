@@ -7,6 +7,7 @@ import ProfileHeader from "@/components/ProfileHeader";
 import ProfileNavigation, { HeaderLink } from "@/components/ProfileNavigation";
 import ProfileContentContainer from "@/components/ProfileContentContainer";
 import Footer from "@/components/Footer";
+import Script from "next/script";
 
 export const metadata = baseMetadata;
 
@@ -83,6 +84,19 @@ export default function RootLayout({
                             description:
                                 "Forward-thinking Software Engineer with background working effectively in dynamic environments. Adept at creating streamlined solutions and delivering efficient results.",
                         }),
+                    }}
+                />
+                <Script strategy="afterInteractive" src={`src="https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`} />
+                <Script
+                    id="google-analytics"
+                    strategy="afterInteractive"
+                    dangerouslySetInnerHTML={{
+                        __html: `
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag(){dataLayer.push(arguments);}
+                    gtag('js', new Date());
+
+                    gtag('config', '${process.env.NEXT_PUBLIC_GA_ID}');`,
                     }}
                 />
             </head>

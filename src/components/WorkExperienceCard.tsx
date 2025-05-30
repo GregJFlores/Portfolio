@@ -71,12 +71,12 @@ const WorkExperienceCard = (props: Props) => {
             }}
             className="border-2 border-green-500 p-4 intense-glow-container"
         >
-            <h3
+            <h4
                 className="text-lg mb-2 text-green-100
                         drop-shadow-[0_0_6px_rgba(34,197,94,0.7)]"
             >
                 {props.job.title}
-            </h3>
+            </h4>
             <p className="text-sm mb-2">{props.job.company}</p>
             <p className="text-xs text-green-500">
                 {props.job.startDate} - {props.job.endDate}

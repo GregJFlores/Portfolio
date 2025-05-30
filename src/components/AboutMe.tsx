@@ -30,8 +30,21 @@ function AboutMe() {
                     className="space-y-4"
                 >
                     <p>
-                        Forward-thinking Software Engineer with background working effectively in dynamic environments. Adept at creating streamlined solutions and delivering
-                        efficient results. Passionate about problem-solving and utilizing technology to drive excellence.
+                        Hi, I’m Greg Flores, a software engineer based in San Antonio, Texas, focused on building reliable, well-architected, and maintainable software systems. I
+                        currently support government contracting efforts, where precision, traceability, and long-term support are essential.
+                    </p>
+                    <p>
+                        I have over four years of experience in full-stack development with a strong emphasis on designing scalable APIs, automating workflows, and improving
+                        developer efficiency. I have a low tolerance for inefficiency — if I find myself doing the same task more than three times, I automate it.
+                    </p>
+                    <p>
+                        My approach to development combines planning and adaptability. For larger efforts, I typically start with diagrams or pen-and-paper designs to map out
+                        system architecture before writing a line of code. I enjoy understanding how systems work at a low level and stay current with emerging technologies by
+                        reading industry blogs and watching deep-dive technical content.
+                    </p>
+                    <p>
+                        Outside of work, I spend time playing guitar and piano, gaming, and wrangling my three dogs and two cats. I believe curiosity, attention to detail, and
+                        continuous learning are key to building systems that stand the test of time.
                     </p>
                     <ProfileInformation
                         items={[

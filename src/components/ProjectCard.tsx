@@ -21,12 +21,12 @@ const ProjectCard = (props: Props) => {
             className="border-2 border-green-500 p-4 intense-glow-container"
         >
             <div className="grid grid-cols-2 gap-4 mb-4">
-                <h3
+                <h4
                     className="text-lg mb-2 text-green-100
                         drop-shadow-[0_0_6px_rgba(34,197,94,0.7)]"
                 >
                     {props.project.title}
-                </h3>
+                </h4>
                 {props.project.imageUrl && (
                     <div className="rounded-sm overflow-hidden border-2 border-green-500 shadow-lg drop-shadow-[0_0_8px_rgba(34,197,94,1)]">
                         <Image src={props.project.imageUrl} alt={"project image"} width={100} height={50} className="w-full h-auto object-cover" />

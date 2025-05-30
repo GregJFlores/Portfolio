@@ -23,13 +23,13 @@ const SkillRadarChart = (props: Props) => {
             }}
             className="border-2 border-green-500 p-4 intense-glow-container"
         >
-            <h3
+            <h4
                 className="text-lg uppercase mb-4 border-b border-green-700 pb-2 
                       text-green-100
                       drop-shadow-[0_0_10px_rgba(34,197,94,0.9)]"
             >
                 Skill Proficiency
-            </h3>
+            </h4>
             <div className="flex items-center justify-center w-100% h-64 md:h-80">
                 <ResponsiveContainer width="100%" height="100%">
                     <RadarChart outerRadius="80%" data={props.skillData}>

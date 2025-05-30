@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import NavLink from "./NavLink";
 import { CheckIcon, ChevronDownIcon, ChevronsUpDownIcon } from "lucide-react";
 import { classNames } from "@/lib/util";
@@ -15,13 +15,7 @@ export type HeaderLink = {
 type Props = {
     links: HeaderLink[];
 };
-{
-    /* <div className="border-b border-green-700 flex relative z-10">
-            {props.links.map((link) => (
-                <NavLink key={link.href} href={link.href} label={link.label} />
-            ))}
-        </div> */
-}
+
 const ProfileNavigation = (props: Props) => {
     const [selected, setSelected] = useState<HeaderLink>(props.links.find((link) => link.href === usePathname()) || props.links[0]);
 
@@ -36,37 +30,7 @@ const ProfileNavigation = (props: Props) => {
 
     return (
         <div className="border-b border-green-700 flex relative z-20">
-            <Listbox value={selected} onChange={handleSelectChange}>
-                <div className="relative w-full sm:hidden">
-                    <ListboxButton className="grid w-full cursor-default grid-cols-1 py-2 pr-2 pl-3 text-left text-md/6  focus:outline-hidden bg-green-800/20 bg-opacity-50">
-                        <div className="col-start-1 row-start-1 relative ">
-                            <span className="truncate pr-6 text-green-400/80">{selected.label}</span>
-                            <span className="absolute top-0 left-0 truncate animate-pulse pr-6 drop-shadow-[0_0_10px_rgba(34,197,94,0.9)]">{selected.label}</span>
-                        </div>
-
-                        <ChevronsUpDownIcon aria-hidden="true" className="col-start-1 row-start-1 size-5 self-center justify-self-end text-green-400 sm:size-4" />
-                    </ListboxButton>
-
-                    <ListboxOptions
-                        transition
-                        className="absolute z-10 mt-1 max-h-60 w-full overflow-auto py-1 text-base shadow-lg ring-1 bg-gray-900 ring-green-400 focus:outline-hidden data-leave:transition data-leave:duration-100 data-leave:ease-in data-closed:data-leave:opacity-0 sm:text-sm"
-                    >
-                        {props.links.map((link) => (
-                            <ListboxOption
-                                key={link.label}
-                                value={link}
-                                className="group relative cursor-default py-2 pr-9 pl-3  select-none data-focus:bg-green-700 data-focus:text-white data-focus:outline-hidden"
-                            >
-                                <span className="block truncate font-normal group-data-selected:font-semibold">{link.label}</span>
-
-                                <span className="absolute inset-y-0 right-0 flex items-center pr-4 text-green-400 group-not-data-selected:hidden group-data-focus:text-white">
-                                    <CheckIcon aria-hidden="true" className="size-5" />
-                                </span>
-                            </ListboxOption>
-                        ))}
-                    </ListboxOptions>
-                </div>
-            </Listbox>
+            <MobileNavigation links={props.links} />
             <div className="hidden sm:block">
                 <nav className="-mb-px flex">
                     {props.links.map((link) => (
@@ -97,3 +61,115 @@ const ProfileNavigation = (props: Props) => {
 };
 
 export default ProfileNavigation;
+
+const MobileNavigation = (props: Props) => {
+    const [isOpen, setIsOpen] = useState(false);
+    const [showPulse, setShowPulse] = useState(false);
+    const navRef = useRef<HTMLDivElement>(null);
+
+    const toggleMenu = () => {
+        setIsOpen(!isOpen);
+        if (showPulse) {
+            setShowPulse(false);
+        }
+    };
+
+    const closeMenu = () => {
+        setIsOpen(false);
+    };
+
+    const handleKeyDown = (event: React.KeyboardEvent) => {
+        if (event.key === "Enter" || event.key === " ") {
+            event.preventDefault();
+            toggleMenu();
+        }
+    };
+
+    // Close menu when clicking outside
+    useEffect(() => {
+        const handleClickOutside = (event: MouseEvent) => {
+            if (navRef.current && !navRef.current.contains(event.target as Node)) {
+                closeMenu();
+            }
+        };
+
+        if (isOpen) {
+            document.addEventListener("mousedown", handleClickOutside);
+        }
+
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
+    }, [isOpen]);
+
+    return (
+        <nav ref={navRef} className={`bg-gradient-to-b from-green-600/10 to-green-700/10 border-b-2 border-green-500 relative sm:hidden w-full`}>
+            <button
+                onClick={toggleMenu}
+                onKeyDown={handleKeyDown}
+                aria-expanded={isOpen}
+                aria-controls="mobile-nav-menu"
+                aria-label="Toggle navigation menu"
+                className={`
+          w-full bg-green-800 hover:bg-green-700
+          text-white p-3 font-semibold cursor-pointer flex items-center justify-between
+          transition-all duration-300 ease-in-out shadow-lg hover:shadow-xl
+           active:translate-y-0 focus:outline-none focus:ring-2 focus:ring-green-400
+          ${showPulse ? "animate-pulse" : ""}
+        `}
+            >
+                <div className="flex items-center gap-3">
+                    {/* Hamburger Menu Icon */}
+                    <div className="flex flex-col gap-1 w-5">
+                        <span
+                            className={`
+                h-0.5 w-full bg-white transition-all duration-300 ease-in-out
+                ${isOpen ? "rotate-45 translate-y-1.5" : ""}
+              `}
+                        />
+                        <span
+                            className={`
+                h-0.5 w-full bg-white transition-all duration-300 ease-in-out
+                ${isOpen ? "opacity-0" : ""}
+              `}
+                        />
+                        <span
+                            className={`
+                h-0.5 w-full bg-white transition-all duration-300 ease-in-out
+                ${isOpen ? "-rotate-45 -translate-y-1.5" : ""}
+              `}
+                        />
+                    </div>
+                    <span className="text-lg">Navigation Menu</span>
+                </div>
+
+                {/* Dropdown Arrow */}
+                <span className={`text-xl transition-transform duration-300 ease-in-out ${isOpen ? "rotate-180" : ""}`}>▼</span>
+            </button>
+
+            {/* Navigation Menu */}
+            <div
+                id="mobile-nav-menu"
+                className={`
+          overflow-hidden transition-all duration-300 ease-in-out
+          bg-slate-900/95 backdrop-blur-sm
+          ${isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"}
+        `}
+                role="menu"
+            >
+                {props.links.map((link, index) => (
+                    <div key={index} className="border-b border-green-600/30 last:border-b-0 transition-all duration-300 hover:bg-green-600/20 hover:translate-x-1">
+                        <Link
+                            href={link.href}
+                            onClick={closeMenu}
+                            className="flex items-center gap-3 p-4 text-green-200 hover:text-white transition-colors duration-300 font-medium"
+                            role="menuitem"
+                        >
+                            <span>{link.label}</span>
+                        </Link>
+                    </div>
+                ))}
+            </div>
+        </nav>
+    );
+};
