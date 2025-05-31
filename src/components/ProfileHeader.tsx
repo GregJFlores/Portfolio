@@ -39,7 +39,7 @@ const ProfileHeader = () => {
             </div>
             {/* Contact Links */}
             <div className="sm:flex space-x-4 grid gap-2 grid-cols-2">
-                <a href="mailto:greg.jflores@gmail.com" className="hover:text-green-200 transition-colors">
+                <a href="mailto:greg@gregjflores.com" className="hover:text-green-200 transition-colors">
                     <Send className="drop-shadow-[0_0_6px_rgba(34,197,94,0.7)]" size={24} />
                 </a>
 

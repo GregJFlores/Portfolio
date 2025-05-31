@@ -91,8 +91,8 @@ export async function POST(req: NextRequest) {
 
     try {
         await resend.emails.send({
-            from: `"Greg Flores Portfolio" <contact@gregjflores.com>`,
-            to: "greg.jflores@gmail.com",
+            from: `"Portfolio Contact Form" <greg@gregjflores.com>`,
+            to: "greg@gregjflores.com",
             subject: subject || "Contact Form Submission",
             html: htmlMessage,
         });

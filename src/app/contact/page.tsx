@@ -23,7 +23,7 @@ function Contact() {
             <p className="mt-5">Feel free to reach out for collaboration, questions, or just to say hello!</p>
             <ContactForm />
             <div className="flex gap-x-12 justify-center items-center mt-8">
-                <a href="mailto:greg.jflores@gmail.com" className="hover:text-green-200 transition-colors">
+                <a href="mailto:greg@gregjflores.com" className="hover:text-green-200 transition-colors">
                     <Send className="drop-shadow-[0_0_6px_rgba(34,197,94,0.7)]" size={24} />
                 </a>
 
