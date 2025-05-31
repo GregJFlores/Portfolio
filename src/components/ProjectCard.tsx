@@ -18,7 +18,7 @@ const ProjectCard = (props: Props) => {
             }}
             className="border-2 border-green-500 p-4 intense-glow-container"
         >
-            <div className="grid grid-cols-2 gap-4 mb-4">
+            <div className="flex justify-between gap-x-2 mb-4">
                 <h4
                     className="text-lg mb-2 text-green-100
                         drop-shadow-[0_0_6px_rgba(34,197,94,0.7)]"
@@ -26,13 +26,13 @@ const ProjectCard = (props: Props) => {
                     {props.project.title}
                 </h4>
                 {props.project.imageUrl && (
-                    <div className="rounded-sm w-36 h-32 md:w-full md:h-40 overflow-hidden border-2 border-green-500 shadow-lg drop-shadow-[0_0_8px_rgba(34,197,94,1)]">
+                    <div className="rounded-sm w-36 h-auto overflow-hidden border-2 border-green-500 shadow-lg drop-shadow-[0_0_8px_rgba(34,197,94,1)]">
                         <ImageKitComponent
                             src={props.project.imageUrl}
                             alt={"project image"}
                             loading="eager"
                             className="object-cover"
-                            fill
+                            width={144}
                             transformation={{ crop: "maintain_ratio", focus: props.project.imageFocus || "center" }}
                         />
                     </div>
