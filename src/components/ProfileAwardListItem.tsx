@@ -1,5 +1,6 @@
 import { Image } from "@imagekit/next";
 import React from "react";
+import ImageKitComponent from "./ImageKitComponent";
 
 type Props = {
     title: string;
@@ -20,15 +21,14 @@ const ProfileAwardListItem = (props: Props) => {
                 </a>
             </div>
             {props.imageUrl && (
-                <div className="relative w-30 h-20 rounded-sm overflow-hidden border-2 border-green-500 shadow-lg drop-shadow-[0_0_8px_rgba(34,197,94,1)]">
-                    <Image
-                        urlEndpoint="https://ik.imagekit.io/gregjflores"
+                <div className="relative w-30 h-24 rounded-sm overflow-hidden border-2 border-green-500 shadow-lg drop-shadow-[0_0_8px_rgba(34,197,94,1)]">
+                    <ImageKitComponent
                         src={props.imageUrl}
                         alt={props.description}
-                        width={500}
-                        height={500}
-                        className="w-full h-auto object-cover"
-                        transformation={[{ width: 500, height: 500 }]}
+                        loading="eager"
+                        className="object-cover"
+                        fill
+                        transformation={{ crop: "maintain_ratio", focus: "auto" }}
                     />
                 </div>
             )}

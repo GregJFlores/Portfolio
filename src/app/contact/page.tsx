@@ -1,14 +1,16 @@
 import ProfileSectionTitle from "@/components/ProfileSectionTitle";
 import React from "react";
-import * as motion from "motion/react-client";
-type Props = {};
+import ContactForm from "@/components/ContactForm";
+import { Send } from "lucide-react";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaSquareXTwitter } from "react-icons/fa6";
 
 export const metadata = {
     title: "Contact - Gregory Flores",
     description: "Contact Gregory Flores, Software Engineer in San Antonio, TX. Available for new opportunities and collaborations.",
 };
 
-const page = (props: Props) => {
+const page = () => {
     return <Contact />;
 };
 
@@ -16,40 +18,25 @@ export default page;
 
 function Contact() {
     return (
-        <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{
-                duration: 0.8,
-                scale: { type: "spring", visualDuration: 0.4, bounce: 0.5 },
-            }}
-            className="space-y-4"
-        >
+        <div className="space-y-4">
             <ProfileSectionTitle text="Contact Me" />
-            <p>If you would like to get in touch, please reach out via email or connect with me on LinkedIn.</p>
-            <ul className="list-disc pl-5">
-                <li>
-                    <a href="mailto:greg.jflores@gmail.com" className="text-blue-500 hover:underline">
-                        Email
-                    </a>
-                </li>
-                <li>
-                    <a href="https://www.linkedin.com/in/gregjflores/" className="text-blue-500 hover:underline">
-                        LinkedIn
-                    </a>
-                </li>
-                <li>
-                    <a href="https://github.com/GregJFlores" className="text-blue-500 hover:underline">
-                        GitHub
-                    </a>
-                </li>
-                <li>
-                    <a href="https://x.com/GregJFlores" className="text-blue-500 hover:underline">
-                        X (formerly Twitter)
-                    </a>
-                </li>
-            </ul>
-            <p>Feel free to reach out for collaboration, questions, or just to say hello!</p>
-        </motion.div>
+            <p className="mt-5">Feel free to reach out for collaboration, questions, or just to say hello!</p>
+            <ContactForm />
+            <div className="flex gap-x-12 justify-center items-center mt-8">
+                <a href="mailto:greg.jflores@gmail.com" className="hover:text-green-200 transition-colors">
+                    <Send className="drop-shadow-[0_0_6px_rgba(34,197,94,0.7)]" size={24} />
+                </a>
+
+                <a href="https://www.linkedin.com/in/gregjflores/" target="_blank" rel="noopener noreferrer" className="hover:text-green-200 transition-colors">
+                    <FaLinkedin className="drop-shadow-[0_0_6px_rgba(34,197,94,0.7)]" size={24} />
+                </a>
+                <a href="https://github.com/GregJFlores" target="_blank" rel="noopener noreferrer" className="hover:text-green-200 transition-colors">
+                    <FaGithub className="drop-shadow-[0_0_6px_rgba(34,197,94,0.7)]" size={24} />
+                </a>
+                <a href="https://x.com/GregJFlores" target="_blank" rel="noopener noreferrer" className="hover:text-green-200 transition-colors">
+                    <FaSquareXTwitter className="drop-shadow-[0_0_6px_rgba(34,197,94,0.7)]" size={24} />
+                </a>
+            </div>
+        </div>
     );
 }

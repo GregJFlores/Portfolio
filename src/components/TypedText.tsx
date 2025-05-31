@@ -8,9 +8,10 @@ interface TypedTextProps {
     showPrompt?: boolean; // Whether to show a command prompt
     promptText?: string; // Custom prompt text
     showCursorBlink?: boolean; // Whether the cursor is visible
+    className?: string; // Optional className for styling
 }
 
-const TypedText = ({ text, speed = 25, showPrompt = false, promptText = "[system@portfolio ~]$", showCursorBlink = false }: TypedTextProps) => {
+const TypedText = ({ text, speed = 25, showPrompt = false, promptText = "[system@portfolio ~]$", showCursorBlink = false, className }: TypedTextProps) => {
     const [typingText, setTypingText] = useState("");
     const [typingComplete, setTypingComplete] = useState(false);
     const [cursorVisible, setCursorVisible] = useState(true);
@@ -47,7 +48,7 @@ const TypedText = ({ text, speed = 25, showPrompt = false, promptText = "[system
     return (
         <div className="relative">
             {showPrompt && <div className="absolute -top-5 left-0 opacity-50 text-sm">{promptText}</div>}
-            <p className="">
+            <p className={"" + className}>
                 {typingText}
                 {cursorVisible && <span className="text-green-100">_</span>}
             </p>

@@ -3,6 +3,7 @@ import React, { useCallback } from "react";
 import * as motion from "motion/react-client";
 import { ProjectItem } from "./ProjectsGrid";
 import { Image } from "@imagekit/next";
+import ImageKitComponent from "./ImageKitComponent";
 type Props = {
     project: ProjectItem;
     index: number;
@@ -28,15 +29,14 @@ const ProjectCard = (props: Props) => {
                     {props.project.title}
                 </h4>
                 {props.project.imageUrl && (
-                    <div className="rounded-sm overflow-hidden border-2 border-green-500 shadow-lg drop-shadow-[0_0_8px_rgba(34,197,94,1)]">
-                        <Image
-                            urlEndpoint="https://ik.imagekit.io/gregjflores"
+                    <div className="rounded-sm w-40 h-32 md:w-full md:h-40 overflow-hidden border-2 border-green-500 shadow-lg drop-shadow-[0_0_8px_rgba(34,197,94,1)]">
+                        <ImageKitComponent
                             src={props.project.imageUrl}
                             alt={"project image"}
-                            width={500}
-                            height={500}
-                            className="w-full h-auto object-cover"
-                            transformation={[{ width: 500, height: 500 }]}
+                            loading="eager"
+                            className="object-cover"
+                            fill
+                            transformation={{ crop: "maintain_ratio", focus: "auto", aiUpscale: true }}
                         />
                     </div>
                 )}
@@ -53,7 +53,7 @@ const ProjectCard = (props: Props) => {
                 </div>
             )}
             {props.project.link && (
-                <div className="mb-2">
+                <div className="mb-2 text-sm">
                     <a href={props.project.link.href} target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:underline">
                         {props.project.link.label || props.project.link.href}
                     </a>

@@ -2,6 +2,7 @@ import { Image } from "@imagekit/next";
 import { Send } from "lucide-react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { FaSquareXTwitter } from "react-icons/fa6";
+import ImageKitComponent from "./ImageKitComponent";
 const ProfileHeader = () => {
     return (
         <div
@@ -10,7 +11,15 @@ const ProfileHeader = () => {
         >
             <div className="flex items-center space-x-4">
                 <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-green-500 shadow-lg drop-shadow-[0_0_8px_rgba(34,197,94,1)]">
-                    <Image urlEndpoint="https://ik.imagekit.io/gregjflores" src="/profile_pic.JPG" alt="Profile" fill className="object-cover" sizes="64px" priority />
+                    <ImageKitComponent
+                        src="/gregjflores.JPG"
+                        alt="Profile"
+                        loading="eager"
+                        className="object-cover"
+                        fill
+                        priority
+                        transformation={{ crop: "maintain_ratio", focus: "auto" }}
+                    />
                 </div>
 
                 <div>

@@ -19,7 +19,7 @@ type Props = {
 
 const ProjectsGrid = (props: Props) => {
     return (
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 gap-6">
             {props.projects.map((project, index) => (
                 <ProjectCard key={index} project={project} index={index} />
             ))}
