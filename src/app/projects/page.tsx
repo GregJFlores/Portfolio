@@ -49,6 +49,7 @@ function Projects() {
             githubUrl: "https://github.com/GregJFlores/Portfolio",
             imageUrl: "/portfolio.jpg",
             liveUrl: "https://www.gregjflores.com/about",
+            imageFocus: "left",
             description: "A terminal themed portfolio website built with Next.js to showcase my projects, skills, and professional experience.",
             technologies: ["Next.js", "Tailwind CSS"],
         },
@@ -58,6 +59,7 @@ function Projects() {
             githubUrl: "https://github.com/GregJFlores/NextWeather",
             imageUrl: "/next-weather.jpg",
             liveUrl: "https://next-weather-kohl.vercel.app/",
+            imageFocus: "top",
             description:
                 "A weather application built with Next.js and Tailwind CSS that provides allows the user to query the current weather and five day forecast. It uses the OpenWeatherMap API to fetch weather data.",
             technologies: ["Next.js", "Tailwind CSS", "OpenWeatherMap API"],

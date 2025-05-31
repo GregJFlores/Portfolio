@@ -11,6 +11,7 @@ export type ProjectItem = {
     link?: { href: string; label: string };
     description?: string;
     technologies?: string[];
+    imageFocus?: "center" | "top" | "bottom" | "left" | "right" | "auto";
 };
 
 type Props = {
