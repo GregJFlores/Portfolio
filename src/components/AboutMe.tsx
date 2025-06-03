@@ -13,7 +13,7 @@ function AboutMe() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{
-                duration: 0.4,
+                duration: 0.2,
                 scale: { type: "spring", visualDuration: 0.4, bounce: 0.5 },
             }}
             className="grid md:grid-cols-3 gap-6"
@@ -24,7 +24,7 @@ function AboutMe() {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{
-                        duration: 0.8,
+                        duration: 0.4,
                         scale: { type: "spring", visualDuration: 0.4, bounce: 0.5 },
                     }}
                     className="space-y-4"

@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import TypedText from "./TypedText";
-
+import * as motion from "motion/react-client";
 type Props = {};
 
 const ContactForm = (props: Props) => {
@@ -13,13 +13,15 @@ const ContactForm = (props: Props) => {
         message: "",
     });
     const [status, setStatus] = useState("");
+    const [isSubmitting, setIsSubmitting] = useState(false);
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         setForm({ ...form, [e.target.name]: e.target.value });
     };
 
     const handleSubmit = async (e: React.FormEvent) => {
-        setStatus(""); // Reset status before sending
+        if (isSubmitting) return; // Prevent multiple submissions
+        setIsSubmitting(true);
         e.preventDefault();
         setStatus("Sending...");
 
@@ -36,7 +38,26 @@ const ContactForm = (props: Props) => {
         } else {
             setStatus("Failed to send. Try again later.");
         }
+        setIsSubmitting(false);
     };
+
+    //Prevent form submission if status is not empty
+    if (status === "Message sent!") {
+        // display a success message along with a message about getting back to the user
+        return (
+            <motion.div
+                initial={{ opacity: 0, scale: 0.5 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{
+                    duration: 0.4,
+                    scale: { type: "spring", visualDuration: 0.4, bounce: 0.2 },
+                }}
+                className="border-2 border-green-500 p-4 intense-glow-container max-w-2xl mx-auto mt-5 text-center"
+            >
+                <TypedText text="Thank you for reaching out! I'll get back to you as soon as possible." />
+            </motion.div>
+        );
+    }
 
     return (
         <form onSubmit={handleSubmit} method="POST" className="mx-auto max-w-xl mt-5">
@@ -51,10 +72,11 @@ const ContactForm = (props: Props) => {
                             name="firstName"
                             type="text"
                             required
+                            disabled={isSubmitting}
                             value={form.firstName}
                             onChange={handleChange}
                             autoComplete="given-name"
-                            className="block w-full bg-gray-800 px-3.5 py-2 text-base outline-1 -outline-offset-1 outline-green-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-green-400"
+                            className="block w-full disabled:opacity-65 disabled:bg-gray-700 disabled:text-gray-300 bg-gray-800 px-3.5 py-2 text-base outline-1 -outline-offset-1 outline-green-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-green-400"
                         />
                     </div>
                 </div>
@@ -69,9 +91,10 @@ const ContactForm = (props: Props) => {
                             type="text"
                             value={form.lastName}
                             required
+                            disabled={isSubmitting}
                             onChange={handleChange}
                             autoComplete="family-name"
-                            className="block w-full bg-gray-800 px-3.5 py-2 text-base outline-1 -outline-offset-1 outline-green-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-green-400"
+                            className="block w-full disabled:opacity-65 disabled:bg-gray-700 disabled:text-gray-300 bg-gray-800 px-3.5 py-2 text-base outline-1 -outline-offset-1 outline-green-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-green-400"
                         />
                     </div>
                 </div>
@@ -84,10 +107,11 @@ const ContactForm = (props: Props) => {
                             id="subject"
                             name="subject"
                             type="text"
+                            disabled={isSubmitting}
                             value={form.subject}
                             onChange={handleChange}
                             autoComplete="subject"
-                            className="block w-full bg-gray-800 px-3.5 py-2 text-base outline-1 -outline-offset-1 outline-green-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-green-400"
+                            className="block w-full disabled:opacity-65 disabled:bg-gray-700 disabled:text-gray-300 bg-gray-800 px-3.5 py-2 text-base outline-1 -outline-offset-1 outline-green-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-green-400"
                         />
                     </div>
                 </div>
@@ -101,10 +125,11 @@ const ContactForm = (props: Props) => {
                             name="email"
                             type="email"
                             required
+                            disabled={isSubmitting}
                             value={form.email}
                             onChange={handleChange}
                             autoComplete="email"
-                            className="block w-full bg-gray-800 px-3.5 py-2 text-base outline-1 -outline-offset-1 outline-green-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-green-400"
+                            className="block w-full disabled:opacity-65 disabled:bg-gray-700 disabled:text-gray-300 bg-gray-800 px-3.5 py-2 text-base outline-1 -outline-offset-1 outline-green-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-green-400"
                         />
                     </div>
                 </div>
@@ -119,9 +144,10 @@ const ContactForm = (props: Props) => {
                             name="message"
                             rows={4}
                             required
+                            disabled={isSubmitting}
                             value={form.message}
                             onChange={handleChange}
-                            className="block w-full bg-gray-800 px-3.5 py-2 text-base outline-1 -outline-offset-1 outline-green-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-green-400"
+                            className="block w-full disabled:opacity-65 bg-gray-800 disabled:bg-gray-700 disabled:text-gray-300 px-3.5 py-2 text-base outline-1 -outline-offset-1 outline-green-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-green-400"
                         />
                     </div>
                 </div>
@@ -129,7 +155,8 @@ const ContactForm = (props: Props) => {
             <div className="mt-10">
                 <button
                     type="submit"
-                    className="block w-full  bg-green-600/75 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-xs hover:bg-green-500/75 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-lime-600"
+                    disabled={isSubmitting}
+                    className="block w-full disabled:opacity-65  disabled:bg-green-700 disabled:text-gray-200  bg-green-600/75 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-xs hover:bg-green-500/75 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-lime-600"
                 >
                     Let's talk
                 </button>
