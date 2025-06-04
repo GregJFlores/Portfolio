@@ -11,7 +11,7 @@ const ProfilePublicationListItem = (props: Props) => {
     return (
         <li className="flex items-center">
             <div>
-                <p className="font-semibold">{props.publicationTitle}</p>
+                <p className="font-semibold text-pretty">{props.publicationTitle}</p>
                 <p>
                     {props.publisher} · {props.publicationDate}
                 </p>

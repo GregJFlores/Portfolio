@@ -92,7 +92,7 @@ const WorkExperienceCard = (props: Props) => {
             {props.job.description && (
                 <div className="border-t border-green-700 pt-2">
                     <p className="text-green-500 text-xs">Description:</p>
-                    <p className="text-sm">{props.job.description}</p>
+                    <p className="text-sm text-pretty">{props.job.description}</p>
                 </div>
             )}
             {props.job.technologies && (

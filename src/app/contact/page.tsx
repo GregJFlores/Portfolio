@@ -28,8 +28,9 @@ function Contact() {
             className="space-y-2"
         >
             <ProfileSectionTitle text="Contact Me" />
-            <p className="mt-5">
-                Feel free to reach out for collaboration, questions, or just to say hello! You can also find my resume{" "}
+            <p className="mt-5 text-pretty">Feel free to reach out for collaboration, questions, or just to say hello!</p>
+            <p className="text-pretty">
+                You can also find my resume{" "}
                 <a href="/Gregory_Flores_Resume.pdf" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:underline">
                     here
                 </a>

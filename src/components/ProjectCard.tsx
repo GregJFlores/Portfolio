@@ -72,9 +72,9 @@ const ProjectCard = (props: Props) => {
             )}
 
             {props.project.description && (
-                <div className="border-t border-green-700 pt-2">
+                <div className="border-t border-green-700 py-2">
                     <p className="text-green-500 text-xs">Description:</p>
-                    <p className="text-sm">{props.project.description}</p>
+                    <p className="text-sm text-pretty">{props.project.description}</p>
                 </div>
             )}
             {props.project.technologies && (
