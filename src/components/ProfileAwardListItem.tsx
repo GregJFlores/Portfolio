@@ -13,9 +13,10 @@ type Props = {
 
 const ProfileAwardListItem = (props: Props) => {
     return (
-        <li className="flex items-center">
-            <div>
-                <p>{props.title}</p>
+        <li className="flex items-center justify-between">
+            <div className="max-w-2/3">
+                <p className="font-semibold">{props.title}</p>
+                <p className="text-sm">{props.description}</p>
                 <a href={props.link} target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:underline">
                     View Award{" "}
                 </a>

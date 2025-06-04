@@ -18,13 +18,11 @@ export default skills;
 
 function Skills() {
     const skills: SkillCategory[] = [
-        { name: "OS", skills: ["Windows", "Linux"] },
         { name: "Programming Languages", skills: ["C", "Rust", "C#", "Python", "Javascript", "Typescript"] },
         { name: "Web", skills: ["HTML5", "CSS3", "TailwindCSS"] },
-        { name: "Frameworks", skills: ["Flask", "React"] },
-        { name: "Database", skills: ["PostgreSQL", "MS SQL"] },
-        { name: "DevOps", skills: ["Docker", "GitLab Pipelines"] },
-        { name: "Tools and Services", skills: ["Git", "JIRA", "Confluence", "Visual Studio Code", "GitHub", "GitLab"] },
+        { name: "Frameworks", skills: ["Flask", "React", "Next.js"] },
+        { name: "Databases", skills: ["PostgreSQL", "MS SQL", "SQLite"] },
+        { name: "DevOps & Tools", skills: ["Docker", "GitLab Pipelines", "Git", "JIRA", "Visual Studio Code", "GitHub", "GitLab"] },
         { name: "Other", skills: ["NI TestStand", "NI LabWindows/CVI", "NI LabVIEW"] },
     ];
 

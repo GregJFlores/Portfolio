@@ -18,7 +18,7 @@ export default experience;
 function WorkExperience() {
     const workExperience: WorkExperienceItem[] = [
         {
-            title: "Software Engineer T3",
+            title: "Software Engineer III",
             company: "CACI International Inc.",
             startDate: "Feb 2021",
             endDate: "Present",
@@ -29,21 +29,13 @@ function WorkExperience() {
         {
             title: "WiFi Technical Support Analyst",
             company: "Opportunity Home San Antonio",
-            startDate: "Jan 2021",
+            startDate: "Sep 2020",
             endDate: "Feb 2021",
             location: "San Antonio, TX",
             description: "Provided technical support for WiFi services to residents.",
             technologies: ["WiFi", "Networking", "Customer Support", "Troubleshooting"],
         },
-        {
-            title: "Information Technology Intern",
-            company: "Opportunity Home San Antonio",
-            startDate: "Sep 2020",
-            endDate: "Jan 2021",
-            location: "San Antonio, TX",
-            description: "Assisted in IT support.",
-            technologies: ["Customer Support", "Troubleshooting"],
-        },
+
         {
             title: "Engineering Intern",
             company: "Xenex Disinfection Services",
@@ -52,15 +44,6 @@ function WorkExperience() {
             location: "San Antonio, TX",
             description: "Worked on software/hardware development for disinfection robots.",
             technologies: ["NI LabVIEW", "Digital Circuit Design"],
-        },
-        {
-            title: "Associate IT Technician",
-            company: "St. Mary's University",
-            startDate: "Sep 2014",
-            endDate: "May 2015",
-            location: "San Antonio, TX",
-            description: "Provided IT support and troubleshooting for university systems.",
-            technologies: ["Customer Support", "Troubleshooting"],
         },
         {
             title: "Aerospace Medical Technician",

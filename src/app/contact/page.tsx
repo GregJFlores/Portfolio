@@ -1,10 +1,10 @@
-import ProfileSectionTitle from "@/components/ProfileSectionTitle";
-import React from "react";
 import ContactForm from "@/components/ContactForm";
+import ProfileSectionTitle from "@/components/ProfileSectionTitle";
 import { Send } from "lucide-react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { FaSquareXTwitter } from "react-icons/fa6";
 import * as motion from "motion/react-client";
+
 export const metadata = {
     title: "Contact - Gregory Flores",
     description: "Contact Gregory Flores, Software Engineer in San Antonio, TX. Available for new opportunities and collaborations.",
@@ -28,7 +28,14 @@ function Contact() {
             className="space-y-2"
         >
             <ProfileSectionTitle text="Contact Me" />
-            <p className="mt-5">Feel free to reach out for collaboration, questions, or just to say hello!</p>
+            <p className="mt-5">
+                Feel free to reach out for collaboration, questions, or just to say hello! You can also find my resume{" "}
+                <a href="/Gregory_Flores_Resume.pdf" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:underline">
+                    here
+                </a>
+                .
+            </p>
+
             <ContactForm />
             <div className="flex gap-x-12 justify-center items-center mt-8">
                 <a href="mailto:greg@gregjflores.com" className="hover:text-green-200 transition-colors">

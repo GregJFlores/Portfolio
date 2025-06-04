@@ -16,9 +16,9 @@ function AboutMe() {
                 duration: 0.2,
                 scale: { type: "spring", visualDuration: 0.4, bounce: 0.5 },
             }}
-            className="grid md:grid-cols-3 gap-6"
+            className="grid md:grid-cols-5 gap-6"
         >
-            <div className="col-span-2 space-y-4">
+            <div className="col-span-full md:col-span-3 space-y-4">
                 <ProfileSectionTitle text="About Me" />
                 <motion.div
                     initial={{ opacity: 0 }}
@@ -65,14 +65,14 @@ function AboutMe() {
                     />
                 </motion.div>
             </div>
-            <div className="space-y-6 col-span-2 md:col-span-1">
+            <div className="space-y-6 md:col-span-2 col-span-full">
                 <ProfileHighlightsList listTitle="Awards">
                     <ProfileAwardListItem
                         title="Technical Innovation - CACI Champions"
                         imageUrl="/caci_champ_award_2024.JPG"
                         width={200}
                         height={200}
-                        description="CACI Champions Award for Technical Innovation"
+                        description="Received recognition for software development on the MPAT (Multi-Platform Automated Tester) test station"
                         link="https://www.linkedin.com/feed/update/urn:li:activity:7184549331754983424/"
                     />
                 </ProfileHighlightsList>
