@@ -16,7 +16,7 @@ const ProfileAwardListItem = (props: Props) => {
         <li className="flex items-center justify-between gap-x-2">
             <div className="max-w-2/3">
                 <p className="font-semibold text-pretty">{props.title}</p>
-                <p className="text-sm text-pretty">{props.description}</p>
+                <p className="text-sm text-pretty py-1">{props.description}</p>
                 <a href={props.link} target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:underline">
                     View Award{" "}
                 </a>
@@ -29,7 +29,16 @@ const ProfileAwardListItem = (props: Props) => {
                         loading="eager"
                         className="object-cover"
                         fill
-                        transformation={{ crop: "maintain_ratio", focus: "auto" }}
+                        width={props.width} // Display size
+                        height={props.height}
+                        transformation={{
+                            width: props.width,
+                            height: props.height,
+                            quality: 80,
+                            format: "webp",
+                            crop: "maintain_ratio",
+                            focus: "auto",
+                        }}
                     />
                 </div>
             )}

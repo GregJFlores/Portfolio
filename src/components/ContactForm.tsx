@@ -54,7 +54,7 @@ const ContactForm = (props: Props) => {
                 }}
                 className="border-2 border-green-500 p-4 intense-glow-container max-w-2xl mx-auto mt-5 text-center"
             >
-                <TypedText text="Thank you for reaching out! I'll get back to you as soon as possible." />
+                <TypedText speed={10} text="Thank you for reaching out! I'll get back to you as soon as possible." />
             </motion.div>
         );
     }
@@ -156,11 +156,10 @@ const ContactForm = (props: Props) => {
                 <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="block w-full disabled:opacity-65  disabled:bg-green-700 disabled:text-gray-200  bg-green-600/75 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-xs hover:bg-green-500/75 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-lime-600"
+                    className="block w-full disabled:opacity-65  disabled:bg-green-700 disabled:text-gray-200  bg-green-500/75 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-xs hover:bg-green-500/75 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-lime-600 [text-shadow:0_1px_2px_rgba(0,0,0,0.3)]"
                 >
-                    Let's talk
+                    {isSubmitting ? "Sending..." : "Let's Connect!"}
                 </button>
-                {status && <TypedText key={status} className="text-center mt-3" text={status} />}
             </div>
         </form>
     );

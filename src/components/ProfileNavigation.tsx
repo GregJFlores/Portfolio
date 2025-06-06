@@ -1,11 +1,9 @@
 "use client";
-import React, { useEffect, useRef, useState } from "react";
-import NavLink from "./NavLink";
-import { CheckIcon, ChevronDownIcon, ChevronsUpDownIcon } from "lucide-react";
 import { classNames } from "@/lib/util";
-import { usePathname, useRouter } from "next/navigation";
+import { CheckIcon } from "lucide-react";
 import Link from "next/link";
-import { Label, Listbox, ListboxButton, ListboxOption, ListboxOptions } from "@headlessui/react";
+import { usePathname } from "next/navigation";
+import React, { useEffect, useRef, useState } from "react";
 
 export type HeaderLink = {
     label: string;
@@ -17,20 +15,12 @@ type Props = {
 };
 
 const ProfileNavigation = (props: Props) => {
-    const [selected, setSelected] = useState<HeaderLink>(props.links.find((link) => link.href === usePathname()) || props.links[0]);
-
     const pathname = usePathname();
     const activeHref = pathname.replace("/", "");
-    const router = useRouter();
-
-    const handleSelectChange = (link: HeaderLink) => {
-        setSelected(link);
-        router.push(link.href);
-    };
 
     return (
         <div className="border-b border-green-700 flex relative z-20">
-            <MobileNavigation links={props.links} />
+            <MobileNavigation links={props.links} activeHref={activeHref} />
             <div className="hidden sm:block">
                 <nav className="-mb-px flex">
                     {props.links.map((link) => (
@@ -62,7 +52,12 @@ const ProfileNavigation = (props: Props) => {
 
 export default ProfileNavigation;
 
-const MobileNavigation = (props: Props) => {
+type MobileNavigationProps = {
+    links: HeaderLink[];
+    activeHref?: string;
+};
+
+const MobileNavigation = (props: MobileNavigationProps) => {
     const [isOpen, setIsOpen] = useState(false);
     const [showPulse, setShowPulse] = useState(false);
     const navRef = useRef<HTMLDivElement>(null);
@@ -111,7 +106,7 @@ const MobileNavigation = (props: Props) => {
                 aria-controls="mobile-nav-menu"
                 aria-label="Toggle navigation menu"
                 className={`
-          w-full bg-green-800 hover:bg-green-700
+          w-full bg-green-700 hover:bg-green-600
           text-white p-3 font-semibold cursor-pointer flex items-center justify-between
           transition-all duration-300 ease-in-out shadow-lg hover:shadow-xl
            active:translate-y-0 focus:outline-none focus:ring-2 focus:ring-green-400
@@ -162,10 +157,14 @@ const MobileNavigation = (props: Props) => {
                         <Link
                             href={link.href}
                             onClick={closeMenu}
-                            className="flex items-center gap-3 p-4 text-green-200 hover:text-white transition-colors duration-300 font-medium"
+                            className={
+                                "flex items-center gap-3 p-4 justify-between text-green-200 hover:text-white transition-colors duration-300 font-medium" +
+                                (link.href === props.activeHref ? " bg-green-900 bg-opacity-50 text-white intense-glow" : "")
+                            }
                             role="menuitem"
                         >
                             <span>{link.label}</span>
+                            <span className={`text-xs text-green-400 transition-all duration-300`}>{link.href === props.activeHref ? <CheckIcon /> : ""}</span>
                         </Link>
                     </div>
                 ))}

@@ -12,7 +12,7 @@ const ProfilePublicationListItem = (props: Props) => {
         <li className="flex items-center">
             <div>
                 <p className="font-semibold text-pretty">{props.publicationTitle}</p>
-                <p>
+                <p className="text-sm text-pretty py-1">
                     {props.publisher} · {props.publicationDate}
                 </p>
                 <a href={props.publicationLink} target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:underline">

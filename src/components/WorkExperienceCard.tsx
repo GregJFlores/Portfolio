@@ -85,12 +85,12 @@ const WorkExperienceCard = (props: Props) => {
                 <span className="text-green-500">Duration:</span> {""}
                 {calculateJobDuration(props.job.startDate, props.job.endDate)}
             </p>
-            <p className="text-xs text-green-500">
+            <p className="text-xs text-green-500 pb-2">
                 <span className="text-green-500">Location:</span> {props.job.location}
             </p>
 
             {props.job.description && (
-                <div className="border-t border-green-700 pt-2">
+                <div className="border-t border-green-700 py-2">
                     <p className="text-green-500 text-xs">Description:</p>
                     <p className="text-sm text-pretty">{props.job.description}</p>
                 </div>

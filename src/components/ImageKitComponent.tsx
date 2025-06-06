@@ -15,6 +15,8 @@ type ImageKitComponentProps = {
         crop?: "force" | "at_max" | "at_max_enlarge" | "at_least" | "maintain_ratio" | undefined;
         focus?: "center" | "top" | "bottom" | "left" | "right" | "auto";
         aiUpscale?: true | undefined;
+        quality?: number; // Optional quality setting
+        format?: "webp" | "jpeg" | "png" | "avif" | undefined; // Optional format setting
     };
 };
 
@@ -37,6 +39,8 @@ const ImageKitComponent = (props: ImageKitComponentProps) => {
                         crop: props.transformation?.crop || "force", // Default crop to force
                         focus: props.transformation?.focus || "center", // Default focus to center// Default focus to center
                         aiUpscale: props.transformation?.aiUpscale || undefined, // Default AI upscale to false
+                        quality: props.transformation?.quality || 80, // Default quality to 80
+                        format: props.transformation?.format || "webp", // Default format to webp
                     },
                 ]}
             />

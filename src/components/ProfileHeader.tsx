@@ -18,7 +18,9 @@ const ProfileHeader = () => {
                         className="object-cover"
                         fill
                         priority
-                        transformation={{ crop: "maintain_ratio", focus: "auto" }}
+                        width={64} // Display size
+                        height={64}
+                        transformation={{ width: 64, height: 64, crop: "maintain_ratio", focus: "auto", quality: 80, format: "webp" }}
                     />
                 </div>
 
@@ -30,7 +32,7 @@ const ProfileHeader = () => {
                         Gregory (Greg) Flores
                     </h1>
                     <h2
-                        className="text-green-400 
+                        className="text-green-200 
                 drop-shadow-[0_0_6px_rgba(34,197,94,0.7)]"
                     >
                         Software Engineer

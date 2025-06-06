@@ -35,7 +35,7 @@ function Projects() {
             title: "Multi-Platform Automatic Tester (MPAT)",
             type: "Work",
             company: "CACI International Inc.",
-            imageUrl: "/mpat.jpg",
+            imageUrl: "/mpat1.jpg",
             link: {
                 href: "https://www.caci.com/automatic-test-systems",
                 label: "Learn More",
