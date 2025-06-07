@@ -5,7 +5,7 @@ type Props = {
     children: React.ReactNode;
 };
 
-const ProfileContainer = (props: Props) => {
+const Container = (props: Props) => {
     return (
         <motion.div
             initial={{ opacity: 0 }}
@@ -27,4 +27,4 @@ const ProfileContainer = (props: Props) => {
     );
 };
 
-export default ProfileContainer;
+export default Container;

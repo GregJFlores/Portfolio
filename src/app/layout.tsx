@@ -1,13 +1,12 @@
-import type { Metadata } from "next";
-import { JetBrains_Mono } from "next/font/google";
-import "./globals.css";
-import { baseMetadata } from "../lib/metadata";
-import ProfileContainer from "@/components/ProfileContainer";
-import ProfileHeader from "@/components/ProfileHeader";
-import ProfileNavigation, { HeaderLink } from "@/components/ProfileNavigation";
-import ProfileContentContainer from "@/components/ProfileContentContainer";
+import Container from "@/components/Container";
+import ContentContainer from "@/components/ContentContainer";
 import Footer from "@/components/Footer";
+import Header from "@/components/Header";
+import Navigation, { HeaderLink } from "@/components/Navigation";
+import { JetBrains_Mono } from "next/font/google";
 import Script from "next/script";
+import { baseMetadata } from "../lib/metadata";
+import "./globals.css";
 
 export const metadata = baseMetadata;
 
@@ -101,12 +100,12 @@ export default function RootLayout({
                 />
             </head>
             <body className={`${jetBrainsMonoTitle.variable} flex items-start md:items-center justify-center min-h-screen`}>
-                <ProfileContainer>
-                    <ProfileHeader />
-                    <ProfileNavigation links={links} />
-                    <ProfileContentContainer>{children}</ProfileContentContainer>
+                <Container>
+                    <Header />
+                    <Navigation links={links} />
+                    <ContentContainer>{children}</ContentContainer>
                     <Footer />
-                </ProfileContainer>
+                </Container>
             </body>
         </html>
     );

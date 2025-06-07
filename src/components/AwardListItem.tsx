@@ -1,5 +1,4 @@
-import { Image } from "@imagekit/next";
-import React from "react";
+import ExternalLink from "./ExternalLink";
 import ImageKitComponent from "./ImageKitComponent";
 
 type Props = {
@@ -11,15 +10,13 @@ type Props = {
     height: number;
 };
 
-const ProfileAwardListItem = (props: Props) => {
+const AwardListItem = (props: Props) => {
     return (
         <li className="flex items-center justify-between gap-x-2">
             <div className="max-w-2/3">
                 <p className="font-semibold text-pretty">{props.title}</p>
-                <p className="text-sm text-pretty py-1">{props.description}</p>
-                <a href={props.link} target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:underline">
-                    View Award{" "}
-                </a>
+                <p className="text-sm text-pretty py-1 leading-relaxed">{props.description}</p>
+                <ExternalLink href={props.link} title="View Award" />
             </div>
             {props.imageUrl && (
                 <div className="relative w-30 h-24 rounded-sm overflow-hidden border-2 border-green-500 shadow-lg drop-shadow-[0_0_8px_rgba(34,197,94,1)]">
@@ -46,4 +43,4 @@ const ProfileAwardListItem = (props: Props) => {
     );
 };
 
-export default ProfileAwardListItem;
+export default AwardListItem;

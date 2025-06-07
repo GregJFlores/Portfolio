@@ -14,7 +14,7 @@ type Props = {
     links: HeaderLink[];
 };
 
-const ProfileNavigation = (props: Props) => {
+const Navigation = (props: Props) => {
     const pathname = usePathname();
     const activeHref = pathname.replace("/", "");
 
@@ -50,7 +50,7 @@ const ProfileNavigation = (props: Props) => {
     );
 };
 
-export default ProfileNavigation;
+export default Navigation;
 
 type MobileNavigationProps = {
     links: HeaderLink[];

@@ -1,4 +1,4 @@
-import ProfileSectionTitle from "@/components/ProfileSectionTitle";
+import SectionTitle from "@/components/SectionTitle";
 import ProjectsGrid, { ProjectItem } from "@/components/ProjectsGrid";
 import React from "react";
 import * as motion from "motion/react-client";
@@ -76,7 +76,7 @@ function Projects() {
             }}
             className="space-y-6"
         >
-            <ProfileSectionTitle text="Projects" />
+            <SectionTitle text="Projects" />
             <ProjectsGrid projects={projects} />
         </motion.div>
     );

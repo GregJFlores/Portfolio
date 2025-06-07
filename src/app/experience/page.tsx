@@ -1,4 +1,4 @@
-import ProfileSectionTitle from "@/components/ProfileSectionTitle";
+import SectionTitle from "@/components/SectionTitle";
 import WorkExperienceGrid, { WorkExperienceItem } from "@/components/WorkExperienceGrid";
 import React from "react";
 import * as motion from "motion/react-client";
@@ -66,7 +66,7 @@ function WorkExperience() {
             }}
             className="space-y-6"
         >
-            <ProfileSectionTitle text="Work Experience" />
+            <SectionTitle text="Work Experience" />
             <WorkExperienceGrid workExperience={workExperience} />
         </motion.div>
     );

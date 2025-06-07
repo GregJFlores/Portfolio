@@ -1,6 +1,7 @@
 import * as motion from "motion/react-client";
 import ImageKitComponent from "./ImageKitComponent";
 import { ProjectItem } from "./ProjectsGrid";
+import ExternalLink from "./ExternalLink";
 type Props = {
     project: ProjectItem;
     index: number;
@@ -20,8 +21,8 @@ const ProjectCard = (props: Props) => {
         >
             <div className="flex justify-between gap-x-2 mb-4">
                 <h4
-                    className="text-lg mb-2 text-green-100
-                        drop-shadow-[0_0_6px_rgba(34,197,94,0.7)]"
+                    className="text-lg mb-2 text-green-100 text-pretty
+                        drop-shadow-[0_0_6px_rgba(34,197,94,0.7)] mr-2"
                 >
                     {props.project.title}
                 </h4>
@@ -52,30 +53,24 @@ const ProjectCard = (props: Props) => {
             )}
             {props.project.link && (
                 <div className="mb-2 text-sm">
-                    <a href={props.project.link.href} target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:underline">
-                        {props.project.link.label || props.project.link.href}
-                    </a>
+                    <ExternalLink href={props.project.link.href} title={props.project.link.label || props.project.link.href} />
                 </div>
             )}
             {props.project.liveUrl && (
                 <div className="text-sm mb-2">
-                    <a href={props.project.liveUrl} target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:underline">
-                        Live Project
-                    </a>
+                    <ExternalLink href={props.project.liveUrl} title="Live Project" />
                 </div>
             )}
             {props.project.githubUrl && (
                 <div className="text-sm mb-2">
-                    <a href={props.project.githubUrl} target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:underline">
-                        GitHub Repository
-                    </a>
+                    <ExternalLink href={props.project.githubUrl} title="GitHub Repository" />
                 </div>
             )}
 
             {props.project.description && (
                 <div className="border-t border-green-700 py-2">
                     <p className="text-green-500 text-xs">Description:</p>
-                    <p className="text-sm text-pretty">{props.project.description}</p>
+                    <p className="text-sm text-pretty leading-relaxed">{props.project.description}</p>
                 </div>
             )}
             {props.project.technologies && (

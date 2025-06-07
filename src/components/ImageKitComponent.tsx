@@ -17,6 +17,7 @@ type ImageKitComponentProps = {
         aiUpscale?: true | undefined;
         quality?: number; // Optional quality setting
         format?: "webp" | "jpeg" | "png" | "avif" | undefined; // Optional format setting
+        dpr?: number | undefined; // Optional DPR setting
     };
 };
 
@@ -41,6 +42,7 @@ const ImageKitComponent = (props: ImageKitComponentProps) => {
                         aiUpscale: props.transformation?.aiUpscale || undefined, // Default AI upscale to false
                         quality: props.transformation?.quality || 80, // Default quality to 80
                         format: props.transformation?.format || "webp", // Default format to webp
+                        dpr: props.transformation?.dpr || undefined, // Default DPR to auto
                     },
                 ]}
             />

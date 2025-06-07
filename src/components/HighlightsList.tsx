@@ -5,7 +5,7 @@ type Props = {
     children: React.ReactNode;
 };
 
-const ProfileHighlightsList = (props: Props) => {
+const HighlightsList = (props: Props) => {
     return (
         <motion.div
             initial={{ opacity: 0, scale: 0.5 }}
@@ -28,4 +28,4 @@ const ProfileHighlightsList = (props: Props) => {
     );
 };
 
-export default ProfileHighlightsList;
+export default HighlightsList;

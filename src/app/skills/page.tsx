@@ -2,7 +2,7 @@ import SkillList, { SkillCategory } from "@/components/SkillList";
 import SkillRadarChart, { SkillDataItem } from "@/components/SkillRadarChart";
 import React from "react";
 import * as motion from "motion/react-client";
-import ProfileSectionTitle from "@/components/ProfileSectionTitle";
+import SectionTitle from "@/components/SectionTitle";
 type Props = {};
 
 export const metadata = {
@@ -47,7 +47,7 @@ function Skills() {
             className="grid md:grid-cols-2 gap-6"
         >
             <div className="col-span-1 space-y-4">
-                <ProfileSectionTitle text="Technical Skills" />
+                <SectionTitle text="Technical Skills" />
                 <SkillList skills={skills} />
             </div>
             <SkillRadarChart skillData={skillData} />

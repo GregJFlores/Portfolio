@@ -5,7 +5,7 @@ type Props = {
     text: string;
 };
 
-const ProfileSectionTitle = (props: Props) => {
+const SectionTitle = (props: Props) => {
     return (
         <div className="border-b border-green-700 pb-2">
             <h3
@@ -19,4 +19,4 @@ const ProfileSectionTitle = (props: Props) => {
     );
 };
 
-export default ProfileSectionTitle;
+export default SectionTitle;
