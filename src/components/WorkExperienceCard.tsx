@@ -47,6 +47,8 @@ const WorkExperienceCard = (props: Props) => {
                 months = (endYear - startYear) * 12 + (endMonth - startMonth);
             }
 
+            months += 1; // Include the starting month in the duration
+
             const years = Math.floor(months / 12);
             const remainingMonths = months % 12;
             if (years > 0) {
