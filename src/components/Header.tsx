@@ -17,9 +17,16 @@ const Header = () => {
                         className="object-cover"
                         fill
                         priority
-                        width={400} // Display size
-                        height={400}
-                        transformation={{ width: 400, height: 400, crop: "maintain_ratio", focus: "auto", quality: 95, format: "webp" }}
+                        width={128} // 2x for retina displays (64px * 2)
+                        height={128}
+                        transformation={{
+                            width: 128,
+                            height: 128,
+                            crop: "maintain_ratio",
+                            focus: "auto",
+                            quality: 85,
+                            format: "webp",
+                        }}
                     />
                 </div>
 

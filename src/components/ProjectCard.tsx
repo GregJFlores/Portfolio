@@ -30,18 +30,19 @@ const ProjectCard = (props: Props) => {
                     <div className="rounded-sm w-36 h-auto overflow-hidden border-2 border-green-500 shadow-lg drop-shadow-[0_0_8px_rgba(34,197,94,1)]">
                         <ImageKitComponent
                             src={props.project.imageUrl}
-                            alt={"project image"}
-                            loading="eager"
+                            alt={`${props.project.title || "Project"} preview image`}
+                            loading="lazy" // Changed to lazy since these are likely below the fold
                             className="object-cover"
-                            width={400} // Display size
-                            height={400}
+                            width={288}
+                            height={288}
                             transformation={{
-                                width: 400,
-                                height: 400,
-                                quality: 95,
+                                width: 288,
+                                height: 288,
+                                quality: 80,
                                 zoom: props.project.imageZoom || undefined,
                                 crop: "at_max",
                                 focus: props.project.imageFocus || "center",
+                                format: "webp",
                             }}
                         />
                     </div>

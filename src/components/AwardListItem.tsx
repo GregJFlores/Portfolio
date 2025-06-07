@@ -21,14 +21,14 @@ const AwardListItem = (props: Props) => {
                     <ImageKitComponent
                         src={props.imageUrl}
                         alt={props.description}
-                        loading="eager"
+                        loading="lazy"
                         className="object-cover"
                         fill
-                        width={400} // Display size
-                        height={400}
+                        width={240} // 2x for retina displays (~120px * 2)
+                        height={192} // 2x for retina displays (~96px * 2)
                         transformation={{
-                            width: 400,
-                            height: 400,
+                            width: 240,
+                            height: 192,
                             quality: 80,
                             format: "webp",
                             crop: "maintain_ratio",
