@@ -70,8 +70,6 @@ function AboutMe() {
                     <AwardListItem
                         title="Technical Innovation - CACI Champions"
                         imageUrl="/caci_champ_award_2024.JPG"
-                        width={200}
-                        height={200}
                         description="Received recognition for software development on the MPAT (Multi-Platform Automated Tester) test station"
                         link="https://www.linkedin.com/feed/update/urn:li:activity:7184549331754983424/"
                     />
