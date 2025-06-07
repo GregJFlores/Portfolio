@@ -12,6 +12,7 @@ export type ProjectItem = {
     description?: string;
     technologies?: string[];
     imageFocus?: "center" | "top" | "bottom" | "left" | "right" | "auto";
+    imageZoom?: number;
 };
 
 type Props = {

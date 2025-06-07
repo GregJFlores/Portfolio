@@ -33,9 +33,16 @@ const ProjectCard = (props: Props) => {
                             alt={"project image"}
                             loading="eager"
                             className="object-cover"
-                            width={200} // Display size
-                            height={200}
-                            transformation={{ width: 200, height: 200, quality: 80, crop: "at_max", focus: props.project.imageFocus || "center" }}
+                            width={400} // Display size
+                            height={400}
+                            transformation={{
+                                width: 400,
+                                height: 400,
+                                quality: 95,
+                                zoom: props.project.imageZoom || undefined,
+                                crop: "at_max",
+                                focus: props.project.imageFocus || "center",
+                            }}
                         />
                     </div>
                 )}

@@ -18,6 +18,7 @@ type ImageKitComponentProps = {
         quality?: number; // Optional quality setting
         format?: "webp" | "jpeg" | "png" | "avif" | undefined; // Optional format setting
         dpr?: number | undefined; // Optional DPR setting
+        zoom?: number | undefined; // Optional zoom setting
     };
 };
 
@@ -43,6 +44,8 @@ const ImageKitComponent = (props: ImageKitComponentProps) => {
                         quality: props.transformation?.quality || 80, // Default quality to 80
                         format: props.transformation?.format || "webp", // Default format to webp
                         dpr: props.transformation?.dpr || undefined, // Default DPR to auto
+                        zoom: props.transformation?.zoom || undefined, // Default zoom to undefined
+                        sharpen: true,
                     },
                 ]}
             />

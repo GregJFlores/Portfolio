@@ -6,8 +6,6 @@ type Props = {
     link: string;
     imageUrl: string;
     description: string;
-    width: number;
-    height: number;
 };
 
 const AwardListItem = (props: Props) => {
@@ -26,11 +24,11 @@ const AwardListItem = (props: Props) => {
                         loading="eager"
                         className="object-cover"
                         fill
-                        width={props.width} // Display size
-                        height={props.height}
+                        width={400} // Display size
+                        height={400}
                         transformation={{
-                            width: props.width,
-                            height: props.height,
+                            width: 400,
+                            height: 400,
                             quality: 80,
                             format: "webp",
                             crop: "maintain_ratio",
