@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { ReactNode } from "react";
 import { PolarAngleAxis, PolarGrid, PolarRadiusAxis, Radar, RadarChart, ResponsiveContainer, Legend } from "recharts";
 import * as motion from "motion/react-client";
 export type SkillDataItem = {
@@ -12,6 +12,7 @@ type Props = {
     skillData: SkillDataItem[];
     chartTitle?: string;
     yearsOfExperience?: number;
+    icon?: ReactNode;
 };
 
 const SkillRadarChart = (props: Props) => {
@@ -37,11 +38,11 @@ const SkillRadarChart = (props: Props) => {
             className="border-2 border-green-500 p-4 intense-glow-container"
         >
             <h4
-                className="text-lg uppercase mb-4 border-b border-green-700 pb-2 
+                className="text-lg uppercase flex items-center gap-x-2 mb-4 border-b border-green-700 pb-2 
                       text-green-100
                       drop-shadow-[0_0_10px_rgba(34,197,94,0.9)]"
             >
-                {props.chartTitle || "Skill Radar Chart"}
+                {props.icon} {props.chartTitle || "Skill Radar Chart"}
             </h4>
             <div className="flex items-center justify-center w-100% h-64 md:h-80">
                 <ResponsiveContainer width="100%" height="100%">
@@ -53,7 +54,7 @@ const SkillRadarChart = (props: Props) => {
                             tick={{ fontSize: 14, fill: "#22c55e" }}
                             tickFormatter={(value) => value}
                             className="text-xs"
-                            tickSize={20}
+                            tickSize={15}
                             tickLine={false}
                         />
                         <PolarRadiusAxis angle={optimalAngle} domain={[0, props.yearsOfExperience || 0]} stroke="#22c55e" strokeOpacity={0.5} />

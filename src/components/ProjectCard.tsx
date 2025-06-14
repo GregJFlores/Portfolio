@@ -49,13 +49,13 @@ const ProjectCard = (props: Props) => {
                 )}
             </div>
 
-            <div className="mb-2">
-                <p className="text-green-500 text-xs">Type:</p>
+            <div className="mb-2 flex items-center gap-x-1 text-sm">
+                <p className="text-green-500">Type:</p>
                 <p className="text-sm">{props.project.type}</p>
             </div>
             {props.project.company && (
-                <div className="mb-2">
-                    <p className="text-green-500 text-xs">Company:</p>
+                <div className="mb-2 flex items-center gap-x-1 text-sm">
+                    <p className="text-green-500">Company:</p>
                     <p className="text-sm">{props.project.company}</p>
                 </div>
             )}

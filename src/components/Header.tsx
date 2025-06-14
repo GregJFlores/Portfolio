@@ -3,6 +3,7 @@ import { FaSquareXTwitter } from "react-icons/fa6";
 import { HiDocumentArrowDown } from "react-icons/hi2";
 import ImageKitComponent from "./ImageKitComponent";
 import SocialLink from "./SocialLink";
+import { RiMapPinFill } from "react-icons/ri";
 const Header = () => {
     return (
         <div
@@ -45,12 +46,13 @@ const Header = () => {
                         >
                             Full Stack Software Engineer
                         </h2>
-                        <h2
-                            className="text-green-100 
+                        <div
+                            className="text-green-100 flex items-center gap-x-2
                 drop-shadow-[0_0_6px_rgba(34,197,94,0.7)]"
                         >
-                            San Antonio, TX
-                        </h2>
+                            <RiMapPinFill className="" />
+                            <h3>San Antonio, TX</h3>
+                        </div>
                     </div>
                     <div className="transition-all sm:hidden flex gap-x-10 text-green-200/90">
                         <ContactLinks smallScreen />

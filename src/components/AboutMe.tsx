@@ -5,8 +5,10 @@ import PublicationListItem from "@/components/PublicationListItem";
 import SectionTitle from "@/components/SectionTitle";
 import * as motion from "motion/react-client";
 import { FaGraduationCap } from "react-icons/fa";
-import { RiMapPinFill } from "react-icons/ri";
+import { RiArticleFill, RiMapPinFill } from "react-icons/ri";
 import ExpandableText from "@/components/ExpandableText";
+import { FaBusinessTime } from "react-icons/fa6";
+import { GiTrophy } from "react-icons/gi";
 function AboutMe() {
     return (
         <motion.div
@@ -51,14 +53,13 @@ function AboutMe() {
 
                     <ProfileInformation
                         items={[
-                            { label: "Location", value: "San Antonio, TX", icon: RiMapPinFill },
-                            { label: "Experience", value: "4+ Years in Software Engineering" },
+                            { label: "Experience", value: "4+ Years in Software Engineering", icon: FaBusinessTime },
                             {
                                 label: "Education",
                                 value: (
                                     <div className="flex flex-col">
                                         <p>B.S. Software Engineering</p>
-                                        <div className="flex flex-col text-xs text-green-200/70">
+                                        <div className="flex flex-col text-xs text-green-300/80">
                                             <p>St. Mary's University</p>
                                             <p>San Antonio, TX</p>
                                         </div>
@@ -71,7 +72,7 @@ function AboutMe() {
                 </motion.div>
             </div>
             <div className="space-y-6 md:col-span-2 col-span-full">
-                <HighlightsList listTitle="Awards">
+                <HighlightsList listTitle="Awards" icon={GiTrophy}>
                     <AwardListItem
                         title="Technical Innovation - CACI Champions"
                         imageUrl="/caci_champ_award_2024.JPG"
@@ -79,7 +80,7 @@ function AboutMe() {
                         link="https://www.linkedin.com/feed/update/urn:li:activity:7184549331754983424/"
                     />
                 </HighlightsList>
-                <HighlightsList listTitle="Publications">
+                <HighlightsList listTitle="Publications" icon={RiArticleFill}>
                     <PublicationListItem
                         publicationTitle="Bringing Legacy Technical Data out of the Shadows Using Modern Digital Engineering Tools"
                         publisher="IEEE"

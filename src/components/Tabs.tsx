@@ -72,7 +72,7 @@ const Tabs: React.FC<TabsProps> = ({ tabs, defaultTab, className = "", tabClassN
     return (
         <div className={`w-full ${className}`}>
             {/* Mobile Dropdown */}
-            <div className="sm:hidden relative mb-6" ref={dropdownRef}>
+            <div className="lg:hidden relative mb-6" ref={dropdownRef}>
                 <button
                     onClick={() => setIsDropdownOpen(!isDropdownOpen)}
                     className="w-full px-4 py-3 text-left bg-green-950/30 border border-green-500/20 rounded-xs text-green-400 font-medium flex justify-between items-center transition-colors duration-200 hover:bg-green-950/40"
@@ -129,7 +129,7 @@ const Tabs: React.FC<TabsProps> = ({ tabs, defaultTab, className = "", tabClassN
             </div>
 
             {/* Desktop Tabs */}
-            <div className="hidden sm:block">
+            <div className="hidden lg:block">
                 <nav className="relative">
                     <div className="flex flex-wrap justify-center border-b border-green-500/20 mb-6">
                         {tabs.map((tab) => (

@@ -26,7 +26,13 @@ import JiraOriginal from "devicons-react/icons/JiraOriginal";
 import VisualStudioCodeOriginal from "devicons-react/icons/VscodeOriginal";
 import SqlalchemyOriginal from "devicons-react/icons/SqlalchemyOriginal";
 import prismaOriginal from "devicons-react/icons/PrismaOriginal";
+import GitHubOriginal from "devicons-react/icons/GithubOriginal";
 import Tabs, { Tab } from "@/components/Tabs";
+import { HiMiniCodeBracketSquare } from "react-icons/hi2";
+import { FaGlobe } from "react-icons/fa";
+import { FaDatabase } from "react-icons/fa";
+import Image from "next/image";
+
 export const metadata = {
     title: "Technical Skills - Gregory Flores",
     description: "Technical skills and technologies used by Gregory Flores: programming languages, frameworks, and development tools.",
@@ -56,21 +62,17 @@ function Skills() {
             ],
         },
         {
-            name: "Web",
+            name: "Web Development",
             skills: [
                 { name: "HTML5", icon: HTML5Original },
                 { name: "CSS3", icon: CSS3Original },
                 { name: "TailwindCSS", icon: TailwindcssOriginal },
-            ],
-        },
-        {
-            name: "Frameworks",
-            skills: [
                 { name: "Flask", icon: FlaskOriginal, iconIsDark: true }, // Flask icon is dark, so we set iconIsDark to true
                 { name: "React", icon: ReactOriginal },
                 { name: "Next.js", icon: NextjsOriginal, iconIsDark: true }, // Next.js icon is dark, so we set iconIsDark to true
             ],
         },
+
         {
             name: "Databases & ORMs",
             skills: [
@@ -89,19 +91,18 @@ function Skills() {
                 { name: "Git", icon: GitOriginal },
                 { name: "JIRA", icon: JiraOriginal },
                 { name: "Visual Studio Code", icon: VisualStudioCodeOriginal },
-                { name: "GitHub", icon: GitOriginal },
+                { name: "GitHub", icon: GitHubOriginal, iconIsDark: true }, // GitHub icon is dark, so we set iconIsDark to true
                 { name: "GitLab", icon: GitlabOriginal },
             ],
         },
-        { name: "Other", skills: [{ name: "NI TestStand" }, { name: "NI LabWindows/CVI" }, { name: "NI LabVIEW" }] },
+        { name: "Automated Test", skills: [{ name: "NI TestStand" }, { name: "NI LabWindows/CVI" }, { name: "NI LabVIEW" }] },
     ];
 
     const programmingSkillData: SkillDataItem[] = [
         { subject: "TypeScript", grade: 3, fullMark: yearsOfExperience },
         { subject: "Python", grade: 4, fullMark: yearsOfExperience },
         { subject: "C", grade: 4, fullMark: yearsOfExperience },
-        { subject: "TestStand", grade: 4, fullMark: yearsOfExperience },
-        { subject: "CVI", grade: 4, fullMark: yearsOfExperience },
+        { subject: "JavaScript", grade: 4, fullMark: yearsOfExperience },
         { subject: "Rust", grade: 2, fullMark: yearsOfExperience },
         { subject: "C#", grade: 2, fullMark: yearsOfExperience },
     ];
@@ -110,58 +111,61 @@ function Skills() {
         { subject: "Flask", grade: 3, fullMark: yearsOfExperience },
         { subject: "React", grade: 4, fullMark: yearsOfExperience },
         { subject: "Next.js", grade: 3, fullMark: yearsOfExperience },
+        { subject: "Tailwind", grade: 3, fullMark: yearsOfExperience },
         { subject: "HTML5", grade: 4, fullMark: yearsOfExperience },
         { subject: "CSS3", grade: 4, fullMark: yearsOfExperience },
-        { subject: "TailwindCSS", grade: 3, fullMark: yearsOfExperience },
     ];
 
     const databasesSkillData: SkillDataItem[] = [
         { subject: "PostgreSQL", grade: 4, fullMark: yearsOfExperience },
         { subject: "MS SQL", grade: 3, fullMark: yearsOfExperience },
+        { subject: "SQLAlchemy", grade: 2, fullMark: yearsOfExperience },
         { subject: "SQLite", grade: 3, fullMark: yearsOfExperience },
         { subject: "Prisma", grade: 2, fullMark: yearsOfExperience },
-        { subject: "SQLAlchemy", grade: 2, fullMark: yearsOfExperience },
-    ];
-
-    const devOpsSkillData: SkillDataItem[] = [
-        { subject: "Docker", grade: 3, fullMark: yearsOfExperience },
-        { subject: "GitLab Pipelines", grade: 3, fullMark: yearsOfExperience },
-        { subject: "Git", grade: 4, fullMark: yearsOfExperience },
-        { subject: "JIRA", grade: 3, fullMark: yearsOfExperience },
-        { subject: "Visual Studio Code", grade: 4, fullMark: yearsOfExperience },
     ];
 
     const otherSkillData: SkillDataItem[] = [
-        { subject: "NI TestStand", grade: 4, fullMark: yearsOfExperience },
-        { subject: "NI LabWindows/CVI", grade: 4, fullMark: yearsOfExperience },
-        { subject: "NI LabVIEW", grade: 3, fullMark: yearsOfExperience },
+        { subject: "TestStand", grade: 4, fullMark: yearsOfExperience },
+        { subject: "CVI", grade: 4, fullMark: yearsOfExperience },
+        { subject: "LabVIEW", grade: 3, fullMark: yearsOfExperience },
     ];
 
     const skillRadarChartTabs: Tab[] = [
         {
             id: "programming-technical-expertise",
             label: "Programming Languages",
-            content: <SkillRadarChart skillData={programmingSkillData} chartTitle="Programming Languages Experience" yearsOfExperience={yearsOfExperience} />,
+            content: (
+                <SkillRadarChart
+                    icon={<HiMiniCodeBracketSquare className="text-green-300" />}
+                    skillData={programmingSkillData}
+                    chartTitle="Programming"
+                    yearsOfExperience={yearsOfExperience}
+                />
+            ),
         },
         {
             id: "web-technical-expertise",
             label: "Web Development",
-            content: <SkillRadarChart skillData={webSkillData} chartTitle="Web Development Experience" yearsOfExperience={yearsOfExperience} />,
+            content: <SkillRadarChart icon={<FaGlobe className="text-green-300" />} skillData={webSkillData} chartTitle="Web" yearsOfExperience={yearsOfExperience} />,
         },
         {
             id: "databases-technical-expertise",
             label: "Databases & ORMs",
-            content: <SkillRadarChart skillData={databasesSkillData} chartTitle="Databases & ORMs Experience" yearsOfExperience={yearsOfExperience} />,
-        },
-        {
-            id: "devops-technical-expertise",
-            label: "DevOps & Tools",
-            content: <SkillRadarChart skillData={devOpsSkillData} chartTitle="DevOps & Tools Experience" yearsOfExperience={yearsOfExperience} />,
+            content: (
+                <SkillRadarChart icon={<FaDatabase className="text-green-300" />} skillData={databasesSkillData} chartTitle="DBs & ORMs" yearsOfExperience={yearsOfExperience} />
+            ),
         },
         {
             id: "other-technical-expertise",
-            label: "Other Technologies",
-            content: <SkillRadarChart skillData={otherSkillData} chartTitle="Other Skills Experience" yearsOfExperience={yearsOfExperience} />,
+            label: "Automated Test",
+            content: (
+                <SkillRadarChart
+                    icon={<Image src={"/dmm.svg"} alt="dmm" width={20} height={20} className="bg-green-300 p-0.5 rounded-xs" />}
+                    skillData={otherSkillData}
+                    chartTitle="Automated Test"
+                    yearsOfExperience={yearsOfExperience}
+                />
+            ),
         },
     ];
 

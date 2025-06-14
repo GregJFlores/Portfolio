@@ -1,6 +1,8 @@
 import React, { useCallback } from "react";
 import { WorkExperienceItem } from "./WorkExperienceGrid";
 import * as motion from "motion/react-client";
+import { RiMapPinFill } from "react-icons/ri";
+import { IoTimeSharp } from "react-icons/io5";
 type Props = {
     job: WorkExperienceItem;
     index: number;
@@ -80,15 +82,15 @@ const WorkExperienceCard = (props: Props) => {
                 {props.job.title}
             </h4>
             <p className="text-sm mb-2">{props.job.company}</p>
-            <p className="text-xs text-green-500">
+            <p className="text-xs text-green-300">
                 {props.job.startDate} - {props.job.endDate}
             </p>
-            <p className="text-xs text-green-500">
-                <span className="text-green-500">Duration:</span> {""}
+            <p className="text-xs text-green-300 flex items-center gap-1">
+                <IoTimeSharp className="text-green-500" />
                 {calculateJobDuration(props.job.startDate, props.job.endDate)}
             </p>
-            <p className="text-xs text-green-500 pb-2">
-                <span className="text-green-500">Location:</span> {props.job.location}
+            <p className="text-xs text-green-300 flex items-center gap-1 pb-2">
+                <RiMapPinFill className="text-green-500" /> {props.job.location}
             </p>
 
             {props.job.description && (

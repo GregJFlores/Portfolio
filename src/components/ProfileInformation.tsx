@@ -16,15 +16,12 @@ const ProfileInformation = (props: Props) => {
             {props.items.map((item, index) => (
                 <div key={index}>
                     <p
-                        className="text-green-500 
+                        className="text-green-500 flex items-center
                       drop-shadow-[0_0_5px_rgba(34,197,94,0.6)]"
                     >
-                        {item.label}
+                        {item.icon && React.createElement(item.icon, { className: "mr-2 text-green-300", size: 16 })} {item.label}
                     </p>
-                    <div className="flex items-center gap-x-2">
-                        {item.icon && React.createElement(item.icon, { className: "mr-2 text-green-300", size: 16 })}
-                        {item.value}
-                    </div>
+                    <div className="flex items-center gap-x-2">{item.value}</div>
                 </div>
             ))}
         </div>
