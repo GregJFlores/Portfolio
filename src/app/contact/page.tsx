@@ -1,10 +1,11 @@
 import ContactForm from "@/components/ContactForm";
-import SectionTitle from "@/components/SectionTitle";
-import { Send } from "lucide-react";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
-import { FaSquareXTwitter } from "react-icons/fa6";
-import * as motion from "motion/react-client";
 import ExternalLink from "@/components/ExternalLink";
+import SectionTitle from "@/components/SectionTitle";
+import SocialLink from "@/components/SocialLink";
+import * as motion from "motion/react-client";
+import { FaEnvelope, FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaSquareXTwitter } from "react-icons/fa6";
+import { HiDocumentArrowDown } from "react-icons/hi2";
 
 export const metadata = {
     title: "Contact - Gregory Flores",
@@ -40,20 +41,20 @@ function Contact() {
 
             <ContactForm />
             <div className="flex gap-x-12 justify-center items-center mt-8 text-green-200/90 transition-colors">
-                <a href="mailto:greg@gregjflores.com" className="hover:text-green-100">
-                    <Send className="drop-shadow-[0_0_6px_rgba(34,197,94,0.7)]" size={24} />
-                </a>
-
-                <a href="https://www.linkedin.com/in/gregjflores/" target="_blank" rel="noopener noreferrer" className="hover:text-green-100 ">
-                    <FaLinkedin className="drop-shadow-[0_0_6px_rgba(34,197,94,0.7)]" size={24} />
-                </a>
-                <a href="https://github.com/GregJFlores" target="_blank" rel="noopener noreferrer" className="hover:text-green-100 ">
-                    <FaGithub className="drop-shadow-[0_0_6px_rgba(34,197,94,0.7)]" size={24} />
-                </a>
-                <a href="https://x.com/GregJFlores" target="_blank" rel="noopener noreferrer" className="hover:text-green-100 ">
-                    <FaSquareXTwitter className="drop-shadow-[0_0_6px_rgba(34,197,94,0.7)]" size={24} />
-                </a>
+                <ContactLinks />
             </div>
         </motion.div>
     );
 }
+
+const ContactLinks = () => {
+    return (
+        <>
+            <SocialLink href="mailto:greg@gregjflores.com" icon={FaEnvelope} name="Email" />
+            <SocialLink href="https://www.linkedin.com/in/gregjflores/" icon={FaLinkedin} name="LinkedIn" />
+            <SocialLink href="https://github.com/GregJFlores" icon={FaGithub} name="GitHub" />
+            <SocialLink href="https://x.com/GregJFlores" icon={FaSquareXTwitter} name="X" />
+            <SocialLink href="/Gregory_Flores_Resume.pdf" icon={HiDocumentArrowDown} name="Resume" />
+        </>
+    );
+};

@@ -40,7 +40,8 @@ function Projects() {
                 href: "https://www.caci.com/automatic-test-systems",
                 label: "Learn More",
             },
-            description: "Developed the hardware abstraction layer that controls the various instruments inside the MPAT Test Station. ",
+            description:
+                "Developed the hardware abstraction layer that controls the various instruments inside the MPAT Test Station. I also developed the Human Machine Interface (HMI) that allows the user to interact with the test station.",
             technologies: ["C", "NI TestStand", "NI LabWindows/CVI"],
         },
         {

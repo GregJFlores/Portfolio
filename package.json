@@ -19,6 +19,7 @@
         "@imagekit/next": "^2.1.2",
         "@next/bundle-analyzer": "^15.1.8",
         "cross-env": "^7.0.3",
+        "devicons-react": "^1.4.1",
         "html-validate": "^9.5.4",
         "lighthouse": "^12.6.0",
         "lucide-react": "^0.510.0",

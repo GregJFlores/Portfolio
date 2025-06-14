@@ -30,7 +30,7 @@ const Navigation = (props: Props) => {
                             aria-current={link.href === activeHref ? "page" : undefined}
                             className={classNames(
                                 link.href === activeHref ? "bg-green-800 bg-opacity-50 text-white intense-glow text-center" : "hover:bg-green-800 hover:bg-opacity-30",
-                                "px-4 py-2 uppercase text-xs md:text-sm lg:text-md text-center border-r border-green-700 relative transition-all duration-300 no-underline"
+                                "px-4 py-2 uppercase text-sm text-center border-r border-green-700 relative transition-all duration-300 no-underline"
                             )}
                         >
                             {link.label}

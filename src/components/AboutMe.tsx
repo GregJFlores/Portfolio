@@ -3,10 +3,10 @@ import HighlightsList from "@/components/HighlightsList";
 import ProfileInformation from "@/components/ProfileInformation";
 import PublicationListItem from "@/components/PublicationListItem";
 import SectionTitle from "@/components/SectionTitle";
-import React from "react";
 import * as motion from "motion/react-client";
-import { GraduationCap, MapPin } from "lucide-react";
-
+import { FaGraduationCap } from "react-icons/fa";
+import { RiMapPinFill } from "react-icons/ri";
+import ExpandableText from "@/components/ExpandableText";
 function AboutMe() {
     return (
         <motion.div
@@ -29,37 +29,42 @@ function AboutMe() {
                     }}
                     className="space-y-4"
                 >
-                    <p className="text-pretty leading-relaxed">
-                        Hi, I’m Greg Flores, a software engineer based in San Antonio, Texas. I focus on building reliable, well-architected, and maintainable software systems. I
-                        currently support government contracting efforts, where precision, traceability, and long-term support are essential.
-                    </p>
-                    <p className="text-pretty leading-relaxed">
-                        I have over four years of experience in full-stack development with a strong emphasis on designing scalable APIs, automating workflows, and improving
-                        developer efficiency. I have a low tolerance for inefficiency — if I find myself doing the same task more than three times, I automate it.
-                    </p>
-                    <p className="text-pretty leading-relaxed">
-                        My approach to development combines planning and adaptability. For larger efforts, I typically start with diagrams or pen-and-paper designs to map out
-                        system architecture before writing a line of code. I enjoy understanding how systems work at a low level and stay current with emerging technologies by
-                        reading industry blogs and watching deep-dive technical content.
-                    </p>
-                    <p className="text-pretty leading-relaxed">
-                        Outside of work, I spend time playing guitar and piano, gaming, and wrangling my three dogs and two cats. I believe curiosity, attention to detail, and
-                        continuous learning are key to building systems that stand the test of time.
-                    </p>
+                    <ExpandableText maxHeight={125} className="text-pretty">
+                        <p className="text-pretty leading-relaxed">
+                            Hi, I’m Greg Flores, a software engineer based in San Antonio, Texas. I focus on building reliable, well-architected, and maintainable software systems.
+                            I currently support government contracting efforts, where precision, traceability, and long-term support are essential.
+                        </p>
+                        <p className="text-pretty leading-relaxed">
+                            I have over four years of experience in full-stack development with a strong emphasis on designing scalable APIs, automating workflows, and improving
+                            developer efficiency. I have a low tolerance for inefficiency — if I find myself doing the same task more than three times, I automate it.
+                        </p>
+                        <p className="text-pretty leading-relaxed">
+                            My approach to development combines planning and adaptability. For larger efforts, I typically start with diagrams or pen-and-paper designs to map out
+                            system architecture before writing a line of code. I enjoy understanding how systems work at a low level and stay current with emerging technologies by
+                            reading industry blogs and watching deep-dive technical content.
+                        </p>
+                        <p className="text-pretty leading-relaxed">
+                            Outside of work, I spend time playing guitar and piano, gaming, and wrangling my three dogs and two cats. I believe curiosity, attention to detail, and
+                            continuous learning are key to building systems that stand the test of time.
+                        </p>
+                    </ExpandableText>
+
                     <ProfileInformation
                         items={[
-                            { label: "Location", value: "San Antonio, TX", icon: MapPin },
+                            { label: "Location", value: "San Antonio, TX", icon: RiMapPinFill },
                             { label: "Experience", value: "4+ Years in Software Engineering" },
                             {
                                 label: "Education",
                                 value: (
-                                    <div>
+                                    <div className="flex flex-col">
                                         <p>B.S. Software Engineering</p>
-                                        <p>St. Mary's University</p>
-                                        <p>San Antonio, TX</p>
+                                        <div className="flex flex-col text-xs text-green-200/70">
+                                            <p>St. Mary's University</p>
+                                            <p>San Antonio, TX</p>
+                                        </div>
                                     </div>
                                 ),
-                                icon: GraduationCap,
+                                icon: FaGraduationCap,
                             },
                         ]}
                     />
@@ -70,7 +75,7 @@ function AboutMe() {
                     <AwardListItem
                         title="Technical Innovation - CACI Champions"
                         imageUrl="/caci_champ_award_2024.JPG"
-                        description="Received recognition for software development on the MPAT (Multi-Platform Automated Tester) test station"
+                        description=""
                         link="https://www.linkedin.com/feed/update/urn:li:activity:7184549331754983424/"
                     />
                 </HighlightsList>
