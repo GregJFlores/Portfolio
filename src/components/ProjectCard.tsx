@@ -2,6 +2,9 @@ import * as motion from "motion/react-client";
 import ImageKitComponent from "./ImageKitComponent";
 import { ProjectItem } from "./ProjectsGrid";
 import ExternalLink from "./ExternalLink";
+import { IoBusinessSharp } from "react-icons/io5";
+import { FaUser, FaBriefcase } from "react-icons/fa";
+
 type Props = {
     project: ProjectItem;
     index: number;
@@ -49,14 +52,27 @@ const ProjectCard = (props: Props) => {
                 )}
             </div>
 
-            <div className="mb-2 flex items-center gap-x-1 text-sm">
-                <p className="text-green-500">Type:</p>
-                <p className="text-sm">{props.project.type}</p>
-            </div>
+            {/* Badge to indicate project type (Personal or Work)*/}
+            {props.project.type && (
+                <div className="mb-2.5">
+                    <span
+                        className={`inline-flex items-center gap-1.5 text-xs font-medium px-3 py-0.5 rounded-sm border ${
+                            props.project.type === "Personal"
+                                ? "bg-green-900/70 text-green-300 border-green-500/50 shadow-[0_0_8px_rgba(34,197,94,0.3)]"
+                                : "bg-blue-900/70 text-blue-300 border-blue-500/50 shadow-[0_0_8px_rgba(59,130,246,0.3)]"
+                        } backdrop-blur-sm transition-all duration-200 hover:scale-105`}
+                    >
+                        {props.project.type === "Personal" ? <FaUser className="w-3 h-3" /> : <FaBriefcase className="w-3 h-3" />}
+                        {props.project.type === "Personal" ? "Personal" : "Work"}
+                    </span>
+                </div>
+            )}
+
+            {/* Company name if available */}
             {props.project.company && (
-                <div className="mb-2 flex items-center gap-x-1 text-sm">
-                    <p className="text-green-500">Company:</p>
-                    <p className="text-sm">{props.project.company}</p>
+                <div className="text-sm text-green-300 flex items-center gap-1 mb-2">
+                    <IoBusinessSharp className="text-green-500" />
+                    {props.project.company}
                 </div>
             )}
             {props.project.link && (

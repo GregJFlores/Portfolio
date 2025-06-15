@@ -2,7 +2,8 @@ import React, { useCallback } from "react";
 import { WorkExperienceItem } from "./WorkExperienceGrid";
 import * as motion from "motion/react-client";
 import { RiMapPinFill } from "react-icons/ri";
-import { IoTimeSharp } from "react-icons/io5";
+import { IoBusinessSharp, IoTimeSharp } from "react-icons/io5";
+import { FaCalendar, FaCalendarAlt } from "react-icons/fa";
 type Props = {
     job: WorkExperienceItem;
     index: number;
@@ -81,15 +82,21 @@ const WorkExperienceCard = (props: Props) => {
             >
                 {props.job.title}
             </h4>
-            <p className="text-sm mb-2">{props.job.company}</p>
-            <p className="text-xs text-green-300">
-                {props.job.startDate} - {props.job.endDate}
-            </p>
-            <p className="text-xs text-green-300 flex items-center gap-1">
+            <div className="text-sm text-green-300 flex items-center gap-1 mb-2">
+                <IoBusinessSharp className="text-green-500" />
+                {props.job.company}
+            </div>
+            <div className="text-sm text-green-300 flex items-center gap-1">
+                <FaCalendarAlt className="text-green-500" />
+                <p>
+                    {props.job.startDate} - {props.job.endDate}
+                </p>
+            </div>
+            <p className="text-sm text-green-300 flex items-center gap-1">
                 <IoTimeSharp className="text-green-500" />
                 {calculateJobDuration(props.job.startDate, props.job.endDate)}
             </p>
-            <p className="text-xs text-green-300 flex items-center gap-1 pb-2">
+            <p className="text-sm text-green-300 flex items-center gap-1 pb-2">
                 <RiMapPinFill className="text-green-500" /> {props.job.location}
             </p>
 
