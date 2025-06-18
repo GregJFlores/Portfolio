@@ -67,8 +67,8 @@ const SkillRadarChart = (props: Props) => {
                                 fill="#22c55e"
                                 fillOpacity={0.4}
                                 isAnimationActive={true}
-                                animationDuration={1000}
-                                animationBegin={200}
+                                animationDuration={800}
+                                animationBegin={0}
                             />
                         </RadarChart>
                     </ResponsiveContainer>

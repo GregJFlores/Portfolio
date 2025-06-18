@@ -1,37 +1,29 @@
+import SectionTitle from "@/components/SectionTitle";
 import SkillList, { SkillCategory } from "@/components/SkillList";
 import SkillRadarChart, { SkillDataItem } from "@/components/SkillRadarChart";
-import React from "react";
-import * as motion from "motion/react-client";
-import SectionTitle from "@/components/SectionTitle";
-type Props = {};
+import Tabs, { Tab } from "@/components/Tabs";
 import COriginal from "devicons-react/icons/COriginal";
-import CSharpOriginal from "devicons-react/icons/CsharpOriginal";
-import PythonOriginal from "devicons-react/icons/PythonOriginal";
-import RustOriginal from "devicons-react/icons/RustOriginal";
-import JavascriptOriginal from "devicons-react/icons/JavascriptOriginal";
-import TypescriptOriginal from "devicons-react/icons/TypescriptOriginal";
-import HTML5Original from "devicons-react/icons/Html5Original";
 import CSS3Original from "devicons-react/icons/Css3Original";
-import TailwindcssOriginal from "devicons-react/icons/TailwindcssOriginal";
+import DockerOriginal from "devicons-react/icons/DockerOriginal";
 import FlaskOriginal from "devicons-react/icons/FlaskOriginal";
-import ReactOriginal from "devicons-react/icons/ReactOriginal";
+import GitHubOriginal from "devicons-react/icons/GithubOriginal";
+import GitlabOriginal from "devicons-react/icons/GitlabOriginal";
+import HTML5Original from "devicons-react/icons/Html5Original";
+import JavascriptOriginal from "devicons-react/icons/JavascriptOriginal";
 import NextjsOriginal from "devicons-react/icons/NextjsOriginal";
 import PostgreSQLOriginal from "devicons-react/icons/PostgresqlOriginal";
-import MsSqlOriginal from "devicons-react/icons/MicrosoftsqlserverOriginal";
-import SQLiteOriginal from "devicons-react/icons/SqliteOriginal";
-import DockerOriginal from "devicons-react/icons/DockerOriginal";
-import GitlabOriginal from "devicons-react/icons/GitlabOriginal";
-import GitOriginal from "devicons-react/icons/GitOriginal";
-import JiraOriginal from "devicons-react/icons/JiraOriginal";
-import VisualStudioCodeOriginal from "devicons-react/icons/VscodeOriginal";
-import SqlalchemyOriginal from "devicons-react/icons/SqlalchemyOriginal";
 import prismaOriginal from "devicons-react/icons/PrismaOriginal";
-import GitHubOriginal from "devicons-react/icons/GithubOriginal";
-import Tabs, { Tab } from "@/components/Tabs";
-import { HiMiniCodeBracketSquare } from "react-icons/hi2";
-import { FaGlobe } from "react-icons/fa";
-import { FaDatabase } from "react-icons/fa";
+import PythonOriginal from "devicons-react/icons/PythonOriginal";
+import ReactOriginal from "devicons-react/icons/ReactOriginal";
+import SqlalchemyOriginal from "devicons-react/icons/SqlalchemyOriginal";
+import TailwindcssOriginal from "devicons-react/icons/TailwindcssOriginal";
+import TypescriptOriginal from "devicons-react/icons/TypescriptOriginal";
+import VisualStudioCodeOriginal from "devicons-react/icons/VscodeOriginal";
+import * as motion from "motion/react-client";
 import Image from "next/image";
+import { FaCodeBranch, FaDatabase, FaGitAlt, FaGlobe } from "react-icons/fa";
+import { HiMiniCodeBracketSquare } from "react-icons/hi2";
+type Props = {};
 
 export const metadata = {
     title: "Technical Skills - Gregory Flores",
@@ -51,17 +43,17 @@ function Skills() {
 
     const skills: SkillCategory[] = [
         {
+            icon: <HiMiniCodeBracketSquare className="text-green-300" />,
             name: "Programming Languages",
             skills: [
                 { name: "C", icon: COriginal },
-                { name: "Rust", icon: RustOriginal, iconIsDark: true }, // Rust icon is dark, so we set iconIsDark to true
-                { name: "C#", icon: CSharpOriginal },
                 { name: "Python", icon: PythonOriginal },
                 { name: "Javascript", icon: JavascriptOriginal },
                 { name: "Typescript", icon: TypescriptOriginal },
             ],
         },
         {
+            icon: <FaGlobe className="text-green-300" />,
             name: "Web Development",
             skills: [
                 { name: "HTML5", icon: HTML5Original },
@@ -74,28 +66,29 @@ function Skills() {
         },
 
         {
+            icon: <FaDatabase className="text-green-300" />,
             name: "Databases & ORMs",
             skills: [
                 { name: "PostgreSQL", icon: PostgreSQLOriginal },
-                { name: "MS SQL", icon: MsSqlOriginal },
-                { name: "SQLite", icon: SQLiteOriginal },
                 { name: "Prisma", icon: prismaOriginal, iconIsDark: true }, // Using TypeScript icon as placeholder for Prisma
                 { name: "SQLAlchemy", icon: SqlalchemyOriginal, iconIsDark: true }, // Using Python icon as placeholder for SQLAlchemy
             ],
         },
         {
+            icon: <FaCodeBranch className="text-green-300" />,
             name: "DevOps & Tools",
             skills: [
                 { name: "Docker", icon: DockerOriginal },
-                { name: "GitLab Pipelines", icon: GitlabOriginal },
-                { name: "Git", icon: GitOriginal },
-                { name: "JIRA", icon: JiraOriginal },
-                { name: "Visual Studio Code", icon: VisualStudioCodeOriginal },
+                { name: "VS Code", icon: VisualStudioCodeOriginal },
                 { name: "GitHub", icon: GitHubOriginal, iconIsDark: true }, // GitHub icon is dark, so we set iconIsDark to true
                 { name: "GitLab", icon: GitlabOriginal },
             ],
         },
-        { name: "Automated Test", skills: [{ name: "NI TestStand" }, { name: "NI LabWindows/CVI" }, { name: "NI LabVIEW" }] },
+        {
+            icon: <Image src={"/dmm.svg"} alt="dmm" width={20} height={20} className="bg-green-300 p-0.5 rounded-xs" />,
+            name: "Automated Test",
+            skills: [{ name: "NI TestStand" }, { name: "NI CVI" }, { name: "NI LabVIEW" }],
+        },
     ];
 
     const programmingSkillData: SkillDataItem[] = [
@@ -103,24 +96,18 @@ function Skills() {
         { subject: "Python", grade: 4, fullMark: yearsOfExperience },
         { subject: "C", grade: 4, fullMark: yearsOfExperience },
         { subject: "JavaScript", grade: 4, fullMark: yearsOfExperience },
-        { subject: "Rust", grade: 2, fullMark: yearsOfExperience },
-        { subject: "C#", grade: 2, fullMark: yearsOfExperience },
     ];
 
     const webSkillData: SkillDataItem[] = [
-        { subject: "Flask", grade: 3, fullMark: yearsOfExperience },
+        { subject: "Flask", grade: 4, fullMark: yearsOfExperience },
         { subject: "React", grade: 4, fullMark: yearsOfExperience },
         { subject: "Next.js", grade: 3, fullMark: yearsOfExperience },
-        { subject: "Tailwind", grade: 3, fullMark: yearsOfExperience },
-        { subject: "HTML5", grade: 4, fullMark: yearsOfExperience },
-        { subject: "CSS3", grade: 4, fullMark: yearsOfExperience },
+        { subject: "Tailwind", grade: 4, fullMark: yearsOfExperience },
     ];
 
     const databasesSkillData: SkillDataItem[] = [
         { subject: "PostgreSQL", grade: 4, fullMark: yearsOfExperience },
-        { subject: "MS SQL", grade: 3, fullMark: yearsOfExperience },
-        { subject: "SQLAlchemy", grade: 2, fullMark: yearsOfExperience },
-        { subject: "SQLite", grade: 3, fullMark: yearsOfExperience },
+        { subject: "SQLAlchemy", grade: 4, fullMark: yearsOfExperience },
         { subject: "Prisma", grade: 2, fullMark: yearsOfExperience },
     ];
 

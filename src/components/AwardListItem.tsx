@@ -1,11 +1,15 @@
+import { FaCalendarAlt } from "react-icons/fa";
 import ExternalLink from "./ExternalLink";
 import ImageKitComponent from "./ImageKitComponent";
+import { IoBusinessSharp } from "react-icons/io5";
 
 type Props = {
     title: string;
     link: string;
     imageUrl: string;
     description: string;
+    company?: string;
+    date?: string;
 };
 
 const AwardListItem = (props: Props) => {
@@ -13,7 +17,17 @@ const AwardListItem = (props: Props) => {
         <li className="flex items-center justify-between gap-x-2">
             <div className="max-w-2/3">
                 <p className="font-semibold text-pretty">{props.title}</p>
-                <p className="text-sm text-pretty py-1 leading-relaxed">{props.description}</p>
+                {props.description && <p className="text-sm text-pretty py-1">{props.description}</p>}
+                {props.company && (
+                    <p className="text-sm text-pretty py-1 flex items-center gap-1">
+                        <IoBusinessSharp className="text-green-500" /> {props.company}
+                    </p>
+                )}
+                {props.date && (
+                    <p className="text-sm text-pretty py-1 flex items-center gap-1">
+                        <FaCalendarAlt className="text-green-500" /> {props.date}
+                    </p>
+                )}
                 <ExternalLink href={props.link} title="View Award" />
             </div>
             {props.imageUrl && (

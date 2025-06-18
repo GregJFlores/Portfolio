@@ -41,7 +41,7 @@ function Projects() {
                 label: "Learn More",
             },
             description:
-                "Developed the hardware abstraction layer that controls the various instruments inside the MPAT Test Station. I also developed the Human Machine Interface (HMI) that allows the user to interact with the test station.",
+                "Developed the hardware abstraction layer that controls the various instruments within the MPAT Test Station, as well as the Human Machine Interface (HMI) that enables user interaction with the system.",
             technologies: ["C", "NI TestStand", "NI LabWindows/CVI"],
         },
         {

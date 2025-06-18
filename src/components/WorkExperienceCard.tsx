@@ -3,7 +3,8 @@ import { WorkExperienceItem } from "./WorkExperienceGrid";
 import * as motion from "motion/react-client";
 import { RiMapPinFill } from "react-icons/ri";
 import { IoBusinessSharp, IoTimeSharp } from "react-icons/io5";
-import { FaCalendar, FaCalendarAlt } from "react-icons/fa";
+import { FaCalendarAlt } from "react-icons/fa";
+import { BsStopwatchFill } from "react-icons/bs";
 type Props = {
     job: WorkExperienceItem;
     index: number;
@@ -93,7 +94,7 @@ const WorkExperienceCard = (props: Props) => {
                 </p>
             </div>
             <p className="text-sm text-green-300 flex items-center gap-1">
-                <IoTimeSharp className="text-green-500" />
+                <BsStopwatchFill className="text-green-500" />
                 {calculateJobDuration(props.job.startDate, props.job.endDate)}
             </p>
             <p className="text-sm text-green-300 flex items-center gap-1 pb-2">

@@ -9,6 +9,8 @@ import { RiArticleFill, RiMapPinFill } from "react-icons/ri";
 import ExpandableText from "@/components/ExpandableText";
 import { FaBusinessTime } from "react-icons/fa6";
 import { GiTrophy } from "react-icons/gi";
+import Link from "next/link";
+
 function AboutMe() {
     return (
         <motion.div
@@ -53,7 +55,23 @@ function AboutMe() {
 
                     <ProfileInformation
                         items={[
-                            { label: "Experience", value: "4+ Years in Software Engineering", icon: FaBusinessTime },
+                            {
+                                label: "Experience",
+                                value: (
+                                    <div className="flex flex-col">
+                                        <p>4+ Years in Software Engineering</p>
+                                        {/* Link to /experience to learn more */}
+
+                                        <Link
+                                            className="text-green-400 hover:text-green-300 underline underline-offset-2 hover:underline-offset-4 transition-all duration-200 text-sm font-medium"
+                                            href="/experience"
+                                        >
+                                            Learn More →
+                                        </Link>
+                                    </div>
+                                ),
+                                icon: FaBusinessTime,
+                            },
                             {
                                 label: "Education",
                                 value: (
@@ -77,6 +95,8 @@ function AboutMe() {
                         title="Technical Innovation - CACI Champions"
                         imageUrl="/caci_champ_award_2024.JPG"
                         description=""
+                        company="CACI International Inc."
+                        date="2024"
                         link="https://www.linkedin.com/feed/update/urn:li:activity:7184549331754983424/"
                     />
                 </HighlightsList>
