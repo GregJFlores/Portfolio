@@ -16,16 +16,17 @@ type Props = {
 };
 
 const SkillRadarChart = (props: Props) => {
-    // Calculate optimal angle to avoid legend overlap
-    //normalize angle starting from top
+    // Calculate optimal angle to align with skill closest to top
     const angleOffset = 90;
     const normalizedData = props.skillData.map((item, index) => ({
         ...item,
         angle: (angleOffset + index * (360 / props.skillData.length)) % 360,
     }));
-    const optimalAngle = normalizedData.reduce((acc, item) => {
-        return Math.max(acc, item.angle);
-    }, 0);
+    const optimalAngle = normalizedData.reduce((closest, item) => {
+        const topDistance = Math.abs(item.angle - 90);
+        const closestDistance = Math.abs(closest.angle - 90);
+        return topDistance < closestDistance ? item : closest;
+    }).angle;
 
     return (
         <motion.div
