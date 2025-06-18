@@ -723,7 +723,14 @@ export default function AsteroidsGame() {
                                 onTouchEnd={() => setMobileControls((prev) => ({ ...prev, left: false }))}
                                 onMouseDown={() => setMobileControls((prev) => ({ ...prev, left: true }))}
                                 onMouseUp={() => setMobileControls((prev) => ({ ...prev, left: false }))}
-                                className="w-16 h-16 bg-green-600 hover:bg-green-500 active:bg-green-400 text-black font-mono text-xl rounded border-2 border-green-400 select-none"
+                                className="w-16 h-16 bg-green-600 hover:bg-green-500 active:bg-green-400 text-black font-mono text-xl rounded border-2 border-green-400 select-none touch-manipulation"
+                                onContextMenu={(e) => e.preventDefault()}
+                                style={{
+                                    WebkitUserSelect: "none",
+                                    WebkitTouchCallout: "none",
+                                    WebkitTapHighlightColor: "transparent",
+                                    touchAction: "manipulation",
+                                }}
                             >
                                 ←
                             </button>
@@ -732,7 +739,14 @@ export default function AsteroidsGame() {
                                 onTouchEnd={() => setMobileControls((prev) => ({ ...prev, right: false }))}
                                 onMouseDown={() => setMobileControls((prev) => ({ ...prev, right: true }))}
                                 onMouseUp={() => setMobileControls((prev) => ({ ...prev, right: false }))}
-                                className="w-16 h-16 bg-green-600 hover:bg-green-500 active:bg-green-400 text-black font-mono text-xl rounded border-2 border-green-400 select-none"
+                                onContextMenu={(e) => e.preventDefault()}
+                                className="w-16 h-16 bg-green-600 hover:bg-green-500 active:bg-green-400 text-black font-mono text-xl rounded border-2 border-green-400 select-none touch-manipulation"
+                                style={{
+                                    WebkitUserSelect: "none",
+                                    WebkitTouchCallout: "none",
+                                    WebkitTapHighlightColor: "transparent",
+                                    touchAction: "manipulation",
+                                }}
                             >
                                 →
                             </button>
@@ -745,7 +759,14 @@ export default function AsteroidsGame() {
                                 onTouchEnd={() => setMobileControls((prev) => ({ ...prev, thrust: false }))}
                                 onMouseDown={() => setMobileControls((prev) => ({ ...prev, thrust: true }))}
                                 onMouseUp={() => setMobileControls((prev) => ({ ...prev, thrust: false }))}
-                                className="w-16 h-16 bg-green-600 hover:bg-green-500 active:bg-green-400 text-black font-mono text-sm rounded border-2 border-green-400 select-none"
+                                onContextMenu={(e) => e.preventDefault()}
+                                className="w-16 h-16 bg-green-600 hover:bg-green-500 active:bg-green-400 text-black font-mono text-sm rounded border-2 border-green-400 select-none touch-manipulation"
+                                style={{
+                                    WebkitUserSelect: "none",
+                                    WebkitTouchCallout: "none",
+                                    WebkitTapHighlightColor: "transparent",
+                                    touchAction: "manipulation",
+                                }}
                             >
                                 ↑<br />
                                 THRUST
@@ -755,7 +776,14 @@ export default function AsteroidsGame() {
                                 onTouchEnd={() => setMobileControls((prev) => ({ ...prev, shoot: false }))}
                                 onMouseDown={() => setMobileControls((prev) => ({ ...prev, shoot: true }))}
                                 onMouseUp={() => setMobileControls((prev) => ({ ...prev, shoot: false }))}
-                                className={`w-16 h-16 ${autoFire ? "bg-red-400" : "bg-red-600"} hover:bg-red-500 active:bg-red-400 text-white font-mono text-sm rounded border-2 border-red-400 select-none`}
+                                onContextMenu={(e) => e.preventDefault()}
+                                className={`w-16 h-16 ${autoFire ? "bg-red-400" : "bg-red-600"} hover:bg-red-500 active:bg-red-400 text-white font-mono text-sm rounded border-2 border-red-400 select-none touch-manipulation`}
+                                style={{
+                                    WebkitUserSelect: "none",
+                                    WebkitTouchCallout: "none",
+                                    WebkitTapHighlightColor: "transparent",
+                                    touchAction: "manipulation",
+                                }}
                             >
                                 FIRE
                             </button>
