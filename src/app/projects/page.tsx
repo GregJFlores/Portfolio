@@ -52,7 +52,7 @@ function Projects() {
             liveUrl: "https://www.gregjflores.com/about",
             imageFocus: "left",
             description: "A terminal themed portfolio website built with Next.js to showcase my projects, skills, and professional experience.",
-            technologies: ["Next.js", "Tailwind CSS"],
+            technologies: ["Next.js", "Tailwind CSS", "Prisma", "Supabase", "Resend"],
         },
         {
             title: "Weather App",

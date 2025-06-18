@@ -22,6 +22,7 @@ const links: HeaderLink[] = [
     { label: "Experience", href: "experience" },
     { label: "Projects", href: "projects" },
     { label: "Contact", href: "contact" },
+    { label: "Play", href: "play" },
 ];
 
 export default function RootLayout({
