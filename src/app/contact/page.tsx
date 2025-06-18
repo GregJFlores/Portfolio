@@ -1,5 +1,6 @@
 import ContactForm from "@/components/ContactForm";
 import ExternalLink from "@/components/ExternalLink";
+import GenericLink from "@/components/GenericLink";
 import SectionTitle from "@/components/SectionTitle";
 import SocialLink from "@/components/SocialLink";
 import * as motion from "motion/react-client";
@@ -54,7 +55,7 @@ const ContactLinks = () => {
             <SocialLink href="https://www.linkedin.com/in/gregjflores/" icon={FaLinkedin} name="LinkedIn" />
             <SocialLink href="https://github.com/GregJFlores" icon={FaGithub} name="GitHub" />
             <SocialLink href="https://x.com/GregJFlores" icon={FaSquareXTwitter} name="X" />
-            <SocialLink href="/Gregory_Flores_Resume.pdf" icon={HiDocumentArrowDown} name="Resume" />
+            <GenericLink href="/Gregory_Flores_Resume.pdf" icon={HiDocumentArrowDown} name="Resume" />
         </>
     );
 };
