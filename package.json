@@ -12,7 +12,8 @@
         "performance-check": "lighthouse https://www.gregjflores.com --only-categories=performance --chrome-flags='--headless'",
         "accessibility-check": "lighthouse https://www.gregjflores.com --only-categories=accessibility --chrome-flags='--headless'",
         "generate-sitemap": "next-sitemap",
-        "validate-html": "html-validate public/**/*.html"
+        "validate-html": "html-validate public/**/*.html",
+        "postinstall": "prisma generate"
     },
     "dependencies": {
         "@headlessui/react": "^2.2.4",
