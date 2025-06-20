@@ -1,6 +1,8 @@
 "use client";
 import { type Score } from "@/lib/database";
+import { AwardIcon, TrophyIcon } from "lucide-react";
 import { useCallback, useEffect, useRef, useState } from "react";
+import { GiTrophy } from "react-icons/gi";
 
 interface Vector {
     x: number;
@@ -473,7 +475,7 @@ export default function AsteroidsGame() {
         });
 
         // Draw bullets
-        ctx.fillStyle = "#22c55e";
+        ctx.fillStyle = "#f59e0b";
         bulletsRef.current.forEach((bullet) => {
             ctx.beginPath();
             ctx.arc(bullet.pos.x, bullet.pos.y, bullet.size, 0, Math.PI * 2);
@@ -598,23 +600,32 @@ export default function AsteroidsGame() {
         : {};
 
     return (
-        <div className="flex flex-col items-center p-2 sm:p-4 bg-transparent min-h-screen">
-            <div className="mb-4 sm:mb-6 flex flex-wrap gap-4 sm:gap-8 text-green-400 font-mono justify-center bg-green-900/20 border border-green-500/30 rounded-lg px-4 py-3">
+        <div
+            className="flex flex-col items-center p-2 sm:p-4 bg-transparent min-h-screen select-none"
+            style={{
+                WebkitUserSelect: "none",
+                WebkitTouchCallout: "none",
+                WebkitTapHighlightColor: "transparent",
+            }}
+        >
+            <div className="mb-4 sm:mb-6 flex items-center flex-col gap-4 sm:gap-8 text-green-400 font-mono justify-center bg-green-900/20 border border-green-500/30 rounded-xs px-4 py-3">
                 <div className="flex items-center gap-2">
-                    <span className="text-green-500 font-bold">Score:</span>
-                    <span className="text-green-300 text-lg font-bold">{score}</span>
-                </div>
-                <div className="flex items-center gap-2">
-                    <span className="text-green-500 font-bold">Lives:</span>
-                    <span className="text-green-300 text-lg font-bold">{lives}</span>
-                </div>
-                <div className="flex items-center gap-2">
-                    <span className="text-green-500 font-bold">Level:</span>
-                    <span className="text-green-300 text-lg font-bold">{level}</span>
+                    <div className="flex items-center gap-2">
+                        <span className="text-green-500 font-bold">Score:</span>
+                        <span className="text-green-300 text-lg font-bold">{score}</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                        <span className="text-green-500 font-bold">Lives:</span>
+                        <span className="text-green-300 text-lg font-bold">{lives}</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                        <span className="text-green-500 font-bold">Level:</span>
+                        <span className="text-green-300 text-lg font-bold">{level}</span>
+                    </div>
                 </div>
                 <button
                     onClick={() => setGameState("leaderboard")}
-                    className="px-3 py-1.5 bg-gradient-to-r from-green-600 to-green-500 hover:from-green-500 hover:to-green-400 text-black font-mono text-sm font-bold rounded-md border border-green-400 transition-all duration-200 shadow-lg hover:shadow-green-400/30"
+                    className="w-fit text-center px-3 py-1.5 bg-gradient-to-r from-green-600 flex items-center gap-x-2 to-green-500 hover:from-green-500 hover:to-green-400 text-black font-mono text-sm font-bold rounded-xs border border-green-400 transition-all duration-200 shadow-lg hover:shadow-green-400/30"
                 >
                     🏆 Leaderboard
                 </button>
@@ -624,15 +635,15 @@ export default function AsteroidsGame() {
                 <canvas ref={canvasRef} width={CANVAS_WIDTH} height={CANVAS_HEIGHT} className="border-2 border-green-500 bg-black" style={canvasStyle} tabIndex={0} />
 
                 {gameState === "gameOver" && (
-                    <div className="absolute inset-0 bg-black/95 backdrop-blur-sm flex items-center justify-center p-4 rounded-lg border border-green-500/50">
-                        <div className="bg-green-900/30 border border-green-500/50 rounded-lg p-6 text-center backdrop-blur-sm max-w-sm w-full">
+                    <div className="absolute inset-0 bg-black/95 backdrop-blur-sm flex items-center justify-center p-4 rounded-xs border border-green-500/50">
+                        <div className="bg-green-900/30 border border-green-500/50 rounded-xs p-6 text-center backdrop-blur-sm max-w-sm w-full">
                             <div className="text-green-400 font-mono text-2xl sm:text-4xl mb-4 drop-shadow-lg">GAME OVER</div>
                             <div className="text-green-300 font-mono text-lg sm:text-xl mb-6">
                                 Final Score: <span className="text-green-400 font-bold">{score}</span>
                             </div>
                             <button
                                 onClick={resetGame}
-                                className="px-6 py-3 bg-gradient-to-r from-green-600 to-green-500 hover:from-green-500 hover:to-green-400 text-black font-mono text-sm sm:text-lg font-bold rounded-lg border-2 border-green-400 transition-all duration-200 shadow-lg hover:shadow-green-400/30"
+                                className="px-6 py-3 bg-gradient-to-r from-green-600 to-green-500 hover:from-green-500 hover:to-green-400 text-black font-mono text-sm sm:text-lg font-bold rounded-xs border-2 border-green-400 transition-all duration-200 shadow-lg hover:shadow-green-400/30"
                             >
                                 PLAY AGAIN
                             </button>
@@ -641,9 +652,11 @@ export default function AsteroidsGame() {
                 )}
 
                 {gameState === "enterName" && (
-                    <div className="absolute inset-0 bg-black/95 backdrop-blur-sm flex items-center justify-center p-4 rounded-lg border border-green-500/50">
-                        <div className="bg-green-900/30 border border-green-500/50 rounded-lg p-6 text-center backdrop-blur-sm max-w-sm w-full">
-                            <div className="text-green-400 font-mono text-xl sm:text-3xl mb-4 drop-shadow-lg">🎉 HIGH SCORE!</div>
+                    <div className="absolute inset-0 bg-black/95 backdrop-blur-sm flex items-center justify-center p-4 rounded-xs border border-green-500/50">
+                        <div className="bg-green-900/30 border border-green-500/50 rounded-xs p-2 text-center backdrop-blur-sm max-w-sm w-full">
+                            <div className="text-green-400 font-mono text-xl sm:text-3xl mb-4 drop-shadow-lg">
+                                {score > (highScores[0]?.score || 0) ? "🏆 YOU BEAT THE #1 HIGH SCORE!" : "🎉 HIGH SCORE!"}
+                            </div>
                             <div className="text-green-300 font-mono text-lg mb-4">
                                 Score: <span className="text-green-400 font-bold">{score}</span>
                             </div>
@@ -653,28 +666,37 @@ export default function AsteroidsGame() {
                                 value={playerName}
                                 onChange={(e) => setPlayerName(e.target.value.slice(0, 15))}
                                 onKeyPress={(e) => e.key === "Enter" && !isSavingScore && handleNameSubmit()}
-                                className="px-3 py-2 bg-black/80 border-2 border-green-500 text-green-400 font-mono text-center rounded-lg mb-4 w-full max-w-xs focus:outline-none focus:border-green-400"
+                                className="px-3 py-2 bg-black/80 border-2 border-green-500 text-green-400 font-mono text-center rounded-xs mb-4 w-full max-w-xs focus:outline-none focus:border-green-400"
                                 placeholder="Your Name"
                                 maxLength={15}
                                 autoFocus
                                 disabled={isSavingScore}
                             />
-                            <button
-                                onClick={handleNameSubmit}
-                                disabled={isSavingScore}
-                                className="px-6 py-3 bg-gradient-to-r from-green-600 to-green-500 hover:from-green-500 hover:to-green-400 disabled:from-gray-600 disabled:to-gray-500 disabled:cursor-not-allowed text-black font-mono text-sm sm:text-lg font-bold rounded-lg border-2 border-green-400 transition-all duration-200 shadow-lg hover:shadow-green-400/30"
-                            >
-                                {isSavingScore ? "SAVING..." : "SUBMIT"}
-                            </button>
+                            <div className="flex gap-4 justify-center">
+                                <button
+                                    onClick={handleNameSubmit}
+                                    disabled={isSavingScore}
+                                    className="px-6 py-3 bg-gradient-to-r from-green-600 to-green-500 hover:from-green-500 hover:to-green-400 disabled:from-gray-600 disabled:to-gray-500 disabled:cursor-not-allowed text-black font-mono text-sm sm:text-lg font-bold rounded-xs border-2 border-green-400 transition-all duration-200 shadow-lg hover:shadow-green-400/30"
+                                >
+                                    {isSavingScore ? "SAVING..." : "SUBMIT"}
+                                </button>
+                                <button
+                                    onClick={() => setGameState(lives > 0 ? "playing" : "gameOver")}
+                                    disabled={isSavingScore}
+                                    className="px-6 py-3 bg-gradient-to-r from-green-600 to-green-500 hover:from-green-500 hover:to-green-400 disabled:from-gray-600 disabled:to-gray-500 disabled:cursor-not-allowed text-black font-mono text-sm sm:text-lg font-bold rounded-xs border-2 border-green-400 transition-all duration-200 shadow-lg hover:shadow-green-400/30"
+                                >
+                                    CANCEL
+                                </button>
+                            </div>
                         </div>
                     </div>
                 )}
 
                 {gameState === "leaderboard" && (
-                    <div className="absolute inset-0 bg-black/95 backdrop-blur-sm flex items-center justify-center p-4 rounded-lg border border-green-500/50 overflow-y-auto">
-                        <div className="bg-green-900/30 border border-green-500/50 rounded-lg p-6 w-full max-w-md backdrop-blur-sm my-auto">
+                    <div className="absolute inset-0 bg-black/95 backdrop-blur-sm flex items-center justify-center p-4 rounded-xs border border-green-500/50 overflow-y-auto">
+                        <div className="bg-green-900/30 border border-green-500/50 rounded-xs p-3 w-full max-w-md backdrop-blur-sm my-auto">
                             <div className="text-green-400 font-mono text-xl sm:text-3xl mb-6 text-center drop-shadow-lg">🏆 HIGH SCORES</div>
-                            <div className="space-y-2 mb-6 max-h-64 overflow-y-auto">
+                            <div className="space-y-2 mb-6 max-h-1/3 overflow-y-auto">
                                 {isLoadingScores ? (
                                     <div className="text-green-300 font-mono text-center py-8">Loading scores...</div>
                                 ) : highScores.length === 0 ? (
@@ -683,7 +705,7 @@ export default function AsteroidsGame() {
                                     highScores.slice(0, 10).map((scoreEntry, index) => (
                                         <div
                                             key={scoreEntry.id}
-                                            className="flex justify-between items-center text-green-300 font-mono text-sm p-3 bg-green-900/40 border border-green-700/50 rounded-lg hover:bg-green-900/60 transition-colors"
+                                            className="flex justify-between items-center text-green-300 font-mono text-sm px-2 py-1.5 bg-green-900/40 border border-green-700/50 rounded-xs hover:bg-green-900/60 transition-colors"
                                         >
                                             <span className="text-green-400 font-bold">#{index + 1}</span>
                                             <span className="flex-1 mx-3 truncate">{scoreEntry.name}</span>
@@ -695,14 +717,14 @@ export default function AsteroidsGame() {
                             <div className="flex gap-2">
                                 <button
                                     onClick={() => setGameState(lives > 0 ? "playing" : "gameOver")}
-                                    className="flex-1 px-4 py-3 bg-gradient-to-r from-green-600 to-green-500 hover:from-green-500 hover:to-green-400 text-black font-mono text-sm sm:text-lg font-bold rounded-lg border-2 border-green-400 transition-all duration-200 shadow-lg hover:shadow-green-400/30"
+                                    className="flex-1 px-4 py-3 bg-gradient-to-r from-green-600 to-green-500 hover:from-green-500 hover:to-green-400 text-black font-mono text-sm sm:text-lg font-bold rounded-xs border-2 border-green-400 transition-all duration-200 shadow-lg hover:shadow-green-400/30"
                                 >
                                     BACK
                                 </button>
                                 <button
                                     onClick={loadHighScores}
                                     disabled={isLoadingScores}
-                                    className="px-4 py-3 bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-500 hover:to-blue-400 disabled:from-gray-600 disabled:to-gray-500 disabled:cursor-not-allowed text-black font-mono text-sm font-bold rounded-lg border-2 border-blue-400 transition-all duration-200 shadow-lg hover:shadow-blue-400/30"
+                                    className="px-4 py-3 bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-500 hover:to-blue-400 disabled:from-gray-600 disabled:to-gray-500 disabled:cursor-not-allowed text-black font-mono text-sm font-bold rounded-xs border-2 border-blue-400 transition-all duration-200 shadow-lg hover:shadow-blue-400/30"
                                 >
                                     {isLoadingScores ? "..." : "↻"}
                                 </button>
@@ -796,12 +818,12 @@ export default function AsteroidsGame() {
             <div className="mt-4 w-full max-w-md">
                 <button
                     onClick={() => setShowControls(!showControls)}
-                    className="w-full text-green-400 font-mono text-sm hover:text-green-300 bg-green-900/30 hover:bg-green-900/50 border border-green-500/30 rounded-lg py-2 px-4 transition-all duration-200"
+                    className="w-full text-green-400 font-mono text-sm hover:text-green-300 bg-green-900/30 hover:bg-green-900/50 border border-green-500/30 rounded-xs py-2 px-4 transition-all duration-200"
                 >
                     {showControls ? "Hide" : "Show"} Controls & Instructions
                 </button>
                 {showControls && (
-                    <div className="mt-3 bg-green-900/20 border border-green-500/30 rounded-lg p-4 backdrop-blur-sm">
+                    <div className="mt-3 bg-green-900/20 border border-green-500/30 rounded-xs p-4 backdrop-blur-sm">
                         <div className="text-green-300 font-mono text-sm space-y-3">
                             <div className="border-b border-green-500/30 pb-2">
                                 <div className="text-green-400 font-bold mb-2 flex items-center gap-2">🎮 Desktop Controls:</div>
@@ -824,7 +846,7 @@ export default function AsteroidsGame() {
                                 <div className="border-b border-green-500/30 pb-2">
                                     <div className="text-green-400 font-bold mb-2 flex items-center gap-2">📱 Mobile Controls:</div>
                                     <div className="text-xs">
-                                        <div>Use buttons below • Hold FIRE for auto-fire</div>
+                                        <div>Use buttons above • Hold FIRE for auto-fire</div>
                                     </div>
                                 </div>
                             )}

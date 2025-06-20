@@ -36,7 +36,7 @@ function Contact() {
                 <div className="inline-flex items-center gap-2 ">
                     <span>Feel free to check out my</span>
 
-                    <ExternalLink href="/Gregory_Flores_Resume.pdf" title="resume" />
+                    <ExternalLink href="/GregoryFloresResume.pdf" title="resume" />
                 </div>
             </div>
 
@@ -55,7 +55,7 @@ const ContactLinks = () => {
             <SocialLink href="https://www.linkedin.com/in/gregjflores/" icon={FaLinkedin} name="LinkedIn" />
             <SocialLink href="https://github.com/GregJFlores" icon={FaGithub} name="GitHub" />
             <SocialLink href="https://x.com/GregJFlores" icon={FaSquareXTwitter} name="X" />
-            <GenericLink href="/Gregory_Flores_Resume.pdf" icon={HiDocumentArrowDown} name="Resume" />
+            <GenericLink href="/GregoryFloresResume.pdf" icon={HiDocumentArrowDown} name="Resume" />
         </>
     );
 };

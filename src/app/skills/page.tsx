@@ -164,7 +164,7 @@ function Skills() {
                 duration: 0.4,
                 scale: { type: "spring", visualDuration: 0.4, bounce: 0.5 },
             }}
-            className="grid md:grid-cols-2 gap-6 "
+            className="grid md:grid-cols-2 gap-8"
         >
             <div className="col-span-1 space-y-4">
                 <SectionTitle text="Technical Skills" />

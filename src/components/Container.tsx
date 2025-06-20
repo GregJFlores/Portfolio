@@ -14,10 +14,10 @@ const Container = (props: Props) => {
                 duration: 0.4,
                 scale: { type: "spring", visualDuration: 0.4, bounce: 0.2 },
             }}
-            className=" text-green-300 font-mono tracking-tight overflow-hidden"
+            className="w-full text-green-300 font-mono tracking-tight overflow-hidden"
         >
             <div
-                className="w-screen lg:w-6xl mx-auto bg-gray-900 bg-opacity-70 border-4 border-green-500  overflow-hidden 
+                className="w-full lg:w-6xl mx-auto bg-gray-900 bg-opacity-70 border-4 border-green-500  overflow-hidden 
         relative
         shadow-[0_0_50px_rgba(34,197,94,0.4)]"
             >

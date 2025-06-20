@@ -75,13 +75,13 @@ const ContactLinks = ({ smallScreen }: { smallScreen?: boolean }) => {
         <>
             <SocialLink href="mailto:greg@gregjflores.com" icon={FaEnvelope} name="Email" iconSize={20} />
             <SocialLink href="https://www.linkedin.com/in/gregjflores/" icon={FaLinkedin} name="LinkedIn" iconSize={20} />
-            <GenericLink href="/Gregory_Flores_Resume.pdf" icon={HiDocumentArrowDown} name="Resume" iconSize={20} />
+            <GenericLink href="/GregoryFloresResume.pdf" icon={HiDocumentArrowDown} name="Resume" iconSize={20} />
         </>
     ) : (
         <>
             <SocialLink href="mailto:greg@gregjflores.com" icon={FaEnvelope} name="Email" />
             <SocialLink href="https://www.linkedin.com/in/gregjflores/" icon={FaLinkedin} name="LinkedIn" />
-            <GenericLink href="/Gregory_Flores_Resume.pdf" icon={HiDocumentArrowDown} name="Resume" />
+            <GenericLink href="/GregoryFloresResume.pdf" icon={HiDocumentArrowDown} name="Resume" />
         </>
     );
 };
