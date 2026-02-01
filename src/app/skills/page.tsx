@@ -19,6 +19,8 @@ import SqlalchemyOriginal from "devicons-react/icons/SqlalchemyOriginal";
 import TailwindcssOriginal from "devicons-react/icons/TailwindcssOriginal";
 import TypescriptOriginal from "devicons-react/icons/TypescriptOriginal";
 import VisualStudioCodeOriginal from "devicons-react/icons/VscodeOriginal";
+import CsharpOriginal from "devicons-react/icons/CsharpOriginal";
+import NestjsOriginal from "devicons-react/icons/NestjsOriginal";
 import * as motion from "motion/react-client";
 import Image from "next/image";
 import { FaCodeBranch, FaDatabase, FaGitAlt, FaGlobe } from "react-icons/fa";
@@ -27,7 +29,8 @@ type Props = {};
 
 export const metadata = {
     title: "Technical Skills - Gregory Flores",
-    description: "Technical skills and technologies used by Gregory Flores: programming languages, frameworks, and development tools.",
+    description:
+        "Technical skills and technologies used by Gregory Flores: programming languages, frameworks, and development tools.",
 };
 
 const skills = (props: Props) => {
@@ -39,7 +42,9 @@ export default skills;
 function Skills() {
     const startDate = new Date("2021-01-01");
     const currentDate = new Date();
-    const yearsOfExperience = Math.floor((currentDate.getTime() - startDate.getTime()) / (1000 * 60 * 60 * 24 * 365));
+    const yearsOfExperience = Math.floor(
+        (currentDate.getTime() - startDate.getTime()) / (1000 * 60 * 60 * 24 * 365)
+    );
 
     const skills: SkillCategory[] = [
         {
@@ -47,6 +52,7 @@ function Skills() {
             name: "Programming Languages",
             skills: [
                 { name: "C", icon: COriginal },
+                { name: "C#", icon: CsharpOriginal },
                 { name: "Python", icon: PythonOriginal },
                 { name: "Javascript", icon: JavascriptOriginal },
                 { name: "Typescript", icon: TypescriptOriginal },
@@ -62,6 +68,7 @@ function Skills() {
                 { name: "Flask", icon: FlaskOriginal, iconIsDark: true }, // Flask icon is dark, so we set iconIsDark to true
                 { name: "React", icon: ReactOriginal },
                 { name: "Next.js", icon: NextjsOriginal, iconIsDark: true }, // Next.js icon is dark, so we set iconIsDark to true
+                { name: "NestJS", icon: NestjsOriginal },
             ],
         },
 
@@ -85,7 +92,15 @@ function Skills() {
             ],
         },
         {
-            icon: <Image src={"/dmm.svg"} alt="dmm" width={20} height={20} className="bg-green-300 p-0.5 rounded-xs" />,
+            icon: (
+                <Image
+                    src={"/dmm.svg"}
+                    alt="dmm"
+                    width={20}
+                    height={20}
+                    className="bg-green-300 p-0.5 rounded-xs"
+                />
+            ),
             name: "Automated Test",
             skills: [{ name: "NI TestStand" }, { name: "NI CVI" }, { name: "NI LabVIEW" }],
         },
@@ -133,13 +148,25 @@ function Skills() {
         {
             id: "web-technical-expertise",
             label: "Web Development",
-            content: <SkillRadarChart icon={<FaGlobe className="text-green-300" />} skillData={webSkillData} chartTitle="Web" yearsOfExperience={yearsOfExperience} />,
+            content: (
+                <SkillRadarChart
+                    icon={<FaGlobe className="text-green-300" />}
+                    skillData={webSkillData}
+                    chartTitle="Web"
+                    yearsOfExperience={yearsOfExperience}
+                />
+            ),
         },
         {
             id: "databases-technical-expertise",
             label: "Databases & ORMs",
             content: (
-                <SkillRadarChart icon={<FaDatabase className="text-green-300" />} skillData={databasesSkillData} chartTitle="DBs & ORMs" yearsOfExperience={yearsOfExperience} />
+                <SkillRadarChart
+                    icon={<FaDatabase className="text-green-300" />}
+                    skillData={databasesSkillData}
+                    chartTitle="DBs & ORMs"
+                    yearsOfExperience={yearsOfExperience}
+                />
             ),
         },
         {
@@ -147,7 +174,15 @@ function Skills() {
             label: "Automated Test",
             content: (
                 <SkillRadarChart
-                    icon={<Image src={"/dmm.svg"} alt="dmm" width={20} height={20} className="bg-green-300 p-0.5 rounded-xs" />}
+                    icon={
+                        <Image
+                            src={"/dmm.svg"}
+                            alt="dmm"
+                            width={20}
+                            height={20}
+                            className="bg-green-300 p-0.5 rounded-xs"
+                        />
+                    }
                     skillData={otherSkillData}
                     chartTitle="Automated Test"
                     yearsOfExperience={yearsOfExperience}

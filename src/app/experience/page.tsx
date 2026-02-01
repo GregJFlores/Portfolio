@@ -6,7 +6,8 @@ type Props = {};
 
 export const metadata = {
     title: "Professional Experience - Gregory Flores",
-    description: "4+ years Software Engineering experience working effectively in dynamic environments and delivering quality solutions.",
+    description:
+        "4+ years Software Engineering experience working effectively in dynamic environments and delivering quality solutions.",
 };
 
 const experience = (props: Props) => {
@@ -18,13 +19,88 @@ export default experience;
 function WorkExperience() {
     const workExperience: WorkExperienceItem[] = [
         {
+            title: "Engineering and Product Development Manager",
+            company: "CACI International Inc.",
+            startDate: "Feb 2026",
+            endDate: "Present",
+            location: "San Antonio, TX",
+            description: "Developed and maintained software solutions for defense applications.",
+            technologies: [
+                "C",
+                "Python",
+                "Flask",
+                "PostgreSQL",
+                "GitLab",
+                "JIRA",
+                "NI TestStand",
+                "NI LabWindows/CVI",
+                "NI LabVIEW",
+                "React",
+                "TypeScript",
+            ],
+        },
+        {
+            title: "Software Engineer III",
+            company: "CACI International Inc.",
+            startDate: "Apr 2022",
+            endDate: "Feb 2026",
+            location: "San Antonio, TX",
+            description: "Developed and maintained software solutions for defense applications.",
+            technologies: [
+                "C",
+                "Python",
+                "Flask",
+                "PostgreSQL",
+                "GitLab",
+                "JIRA",
+                "NI TestStand",
+                "NI LabWindows/CVI",
+                "NI LabVIEW",
+                "React",
+                "TypeScript",
+            ],
+        },
+        {
+            title: "Software Engineer I",
+            company: "CACI International Inc.",
+            startDate: "Feb 2021",
+            endDate: "Apr 2022",
+            location: "San Antonio, TX",
+            description: "Developed and maintained software solutions for defense applications.",
+            technologies: [
+                "C",
+                "Python",
+                "Flask",
+                "PostgreSQL",
+                "GitLab",
+                "JIRA",
+                "NI TestStand",
+                "NI LabWindows/CVI",
+                "NI LabVIEW",
+                "React",
+                "TypeScript",
+            ],
+        },
+        {
             title: "Software Engineer III",
             company: "CACI International Inc.",
             startDate: "Feb 2021",
             endDate: "Present",
             location: "San Antonio, TX",
             description: "Developed and maintained software solutions for defense applications.",
-            technologies: ["C", "Python", "Flask", "PostgreSQL", "GitLab", "JIRA", "NI TestStand", "NI LabWindows/CVI", "NI LabVIEW", "React", "TypeScript"],
+            technologies: [
+                "C",
+                "Python",
+                "Flask",
+                "PostgreSQL",
+                "GitLab",
+                "JIRA",
+                "NI TestStand",
+                "NI LabWindows/CVI",
+                "NI LabVIEW",
+                "React",
+                "TypeScript",
+            ],
         },
         {
             title: "WiFi Technical Support Analyst",
@@ -51,7 +127,8 @@ function WorkExperience() {
             startDate: "Mar 2012",
             endDate: "Feb 2018",
             location: "San Antonio, TX",
-            description: "Served as a medical technician in the Air Force, providing EMT/Nursing support.",
+            description:
+                "Served as a medical technician in the Air Force, providing EMT/Nursing support.",
             technologies: ["EMT", "Nursing", "Medical Support", "EMT Instructor"],
         },
     ];

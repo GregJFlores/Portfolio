@@ -11,6 +11,7 @@ const ContactForm = (props: Props) => {
         subject: "",
         email: "",
         message: "",
+        organization: "", // honeypot field
     });
     const [status, setStatus] = useState("");
     const [isSubmitting, setIsSubmitting] = useState(false);
@@ -25,6 +26,11 @@ const ContactForm = (props: Props) => {
         e.preventDefault();
         setStatus("Sending...");
 
+        if (form.organization !== "") {
+            setIsSubmitting(false);
+            return;
+        }
+
         const res = await fetch("/api/contact", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
@@ -34,7 +40,14 @@ const ContactForm = (props: Props) => {
         const result = await res.json();
         if (result.success) {
             setStatus("Message sent!");
-            setForm({ firstName: "", lastName: "", subject: "", email: "", message: "" });
+            setForm({
+                firstName: "",
+                lastName: "",
+                subject: "",
+                email: "",
+                message: "",
+                organization: "",
+            });
         } else {
             setStatus("Failed to send. Try again later.");
         }
@@ -54,7 +67,10 @@ const ContactForm = (props: Props) => {
                 }}
                 className="border-2 border-green-500 p-4 intense-glow-container max-w-2xl mx-auto mt-5 text-center"
             >
-                <TypedText speed={10} text="Thank you for reaching out! I'll get back to you as soon as possible." />
+                <TypedText
+                    speed={10}
+                    text="Thank you for reaching out! I'll get back to you as soon as possible."
+                />
             </motion.div>
         );
     }
@@ -111,6 +127,23 @@ const ContactForm = (props: Props) => {
                             value={form.subject}
                             onChange={handleChange}
                             autoComplete="subject"
+                            className="block w-full disabled:opacity-65 disabled:bg-gray-700 disabled:text-gray-300 bg-gray-800 px-3.5 py-2 text-base outline-1 -outline-offset-1 outline-green-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-green-400"
+                        />
+                    </div>
+                </div>
+                <div className="sm:col-span-2 sr-only">
+                    <label htmlFor="organization" className="block text-sm/6 font-semibold">
+                        Organization
+                    </label>
+                    <div className="mt-2.5">
+                        <input
+                            id="organization"
+                            name="organization"
+                            type="text"
+                            disabled={isSubmitting}
+                            value={form.organization}
+                            onChange={handleChange}
+                            autoComplete="organization"
                             className="block w-full disabled:opacity-65 disabled:bg-gray-700 disabled:text-gray-300 bg-gray-800 px-3.5 py-2 text-base outline-1 -outline-offset-1 outline-green-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-green-400"
                         />
                     </div>
