@@ -38,7 +38,8 @@ export const baseMetadata = {
         locale: "en_US",
         url: "https://www.gregjflores.com",
         title: "Gregory Flores - Software Engineer | San Antonio, TX",
-        description: "Software Engineer with 4+ years experience creating streamlined solutions and delivering efficient results.",
+        description:
+            "Software Engineer with 5+ years experience creating streamlined solutions and delivering efficient results.",
         siteName: "Gregory Flores Portfolio",
         images: [
             {
@@ -52,7 +53,8 @@ export const baseMetadata = {
     twitter: {
         card: "summary_large_image",
         title: "Gregory Flores - Software Engineer",
-        description: "Software Engineer with 4+ years experience in San Antonio, TX. Passionate about technology and problem-solving.",
+        description:
+            "Software Engineer with 5+ years experience in San Antonio, TX. Passionate about technology and problem-solving.",
         images: ["/og-image.jpg"], // Same image as OpenGraph
     },
     robots: {
@@ -76,43 +78,52 @@ export const pageMetadata = {
             "Software Engineer Gregory (Greg) Flores brings comprehensive engineering expertise to full-stack development and innovative technology solutions. Based in San Antonio with a B.S. from St. Mary's University.",
         openGraph: {
             title: "About - Gregory (Greg) Flores",
-            description: "Software Engineer with expertise in creating streamlined solutions and delivering efficient results.",
+            description:
+                "Software Engineer with expertise in creating streamlined solutions and delivering efficient results.",
             url: "https://www.gregjflores.com/about",
         },
     },
     skills: {
         title: "Technical Skills - Gregory (Greg) Flores",
-        description: "Technical skills and technologies used by Gregory Flores: programming languages, frameworks, and development tools.",
+        description:
+            "Technical skills and technologies used by Gregory Flores: programming languages, frameworks, and development tools.",
         openGraph: {
             title: "Technical Skills - Gregory (Greg)  Flores",
-            description: "Technical skills and technologies used by Gregory (Greg) Flores as a Software Engineer.",
+            description:
+                "Technical skills and technologies used by Gregory (Greg) Flores as a Software Engineer.",
             url: "https://www.gregjflores.com/skills",
         },
     },
     experience: {
         title: "Professional Experience - Gregory (Greg) Flores",
-        description: "4+ years Software Engineering experience working effectively in dynamic environments and delivering quality solutions.",
+        description:
+            "5+ years Software Engineering experience working effectively in dynamic environments and delivering quality solutions.",
         openGraph: {
             title: "Professional Experience - Gregory (Greg) Flores",
-            description: "4+ years Software Engineering experience in dynamic environments and quality solution delivery.",
+            description:
+                "5+ years Software Engineering experience in dynamic environments and quality solution delivery.",
             url: "https://www.gregjflores.com/experience",
         },
     },
     projects: {
         title: "Projects Portfolio - Gregory (Greg) Flores",
-        description: "Software development projects showcasing problem-solving skills, technology expertise, and innovative solutions.",
+        description:
+            "Software development projects showcasing problem-solving skills, technology expertise, and innovative solutions.",
         openGraph: {
             title: "Projects Portfolio - Gregory (Greg) Flores",
-            description: "Software development projects showcasing problem-solving skills and technology expertise.",
+            description:
+                "Software development projects showcasing problem-solving skills and technology expertise.",
             url: "https://www.gregjflores.com/projects",
         },
     },
     contact: {
         title: "Contact - Gregory (Greg) Flores",
-        description: "Contact Gregory Flores, Software Engineer in San Antonio, TX. Available for new opportunities and collaborations.",
+        description:
+            "Contact Gregory Flores, Software Engineer in San Antonio, TX. Available for new opportunities and collaborations.",
         openGraph: {
             title: "Contact Gregory (Greg) Flores",
-            description: "Contact Gregory (Greg) Flores, Software Engineer based in San Antonio, TX for opportunities.",
+            description:
+                "Contact Gregory (Greg) Flores, Software Engineer based in San Antonio, TX for opportunities.",
             url: "https://www.gregjflores.com/contact",
         },
     },

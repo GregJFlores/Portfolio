@@ -45,7 +45,7 @@ const Header = () => {
                             className="text-green-100 
                 drop-shadow-[0_0_6px_rgba(34,197,94,0.7)]"
                         >
-                            Full Stack Software Engineer
+                            Engineering and Product Development Management
                         </h2>
                         <div
                             className="text-green-100 flex items-center gap-x-2
@@ -63,7 +63,9 @@ const Header = () => {
             {/* Contact Links */}
             <div className="transition-all hidden sm:flex gap-6 text-green-200/90">
                 <ContactLinks />
-                <a rel="me" className="sr-only" href="https://defcon.social/@gregjflores">Mastodon</a>
+                <a rel="me" className="sr-only" href="https://defcon.social/@gregjflores">
+                    Mastodon
+                </a>
             </div>
         </div>
     );
@@ -74,14 +76,33 @@ export default Header;
 const ContactLinks = ({ smallScreen }: { smallScreen?: boolean }) => {
     return smallScreen ? (
         <>
-            <SocialLink href="mailto:greg@gregjflores.com" icon={FaEnvelope} name="Email" iconSize={20} />
-            <SocialLink href="https://www.linkedin.com/in/gregjflores/" icon={FaLinkedin} name="LinkedIn" iconSize={20} />
-            <GenericLink href="/GregoryFloresResume.pdf" icon={HiDocumentArrowDown} name="Resume" iconSize={20} />
+            <SocialLink
+                href="mailto:greg@gregjflores.com"
+                icon={FaEnvelope}
+                name="Email"
+                iconSize={20}
+            />
+            <SocialLink
+                href="https://www.linkedin.com/in/gregjflores/"
+                icon={FaLinkedin}
+                name="LinkedIn"
+                iconSize={20}
+            />
+            <GenericLink
+                href="/GregoryFloresResume.pdf"
+                icon={HiDocumentArrowDown}
+                name="Resume"
+                iconSize={20}
+            />
         </>
     ) : (
         <>
             <SocialLink href="mailto:greg@gregjflores.com" icon={FaEnvelope} name="Email" />
-            <SocialLink href="https://www.linkedin.com/in/gregjflores/" icon={FaLinkedin} name="LinkedIn" />
+            <SocialLink
+                href="https://www.linkedin.com/in/gregjflores/"
+                icon={FaLinkedin}
+                name="LinkedIn"
+            />
             <GenericLink href="/GregoryFloresResume.pdf" icon={HiDocumentArrowDown} name="Resume" />
         </>
     );
