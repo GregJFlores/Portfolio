@@ -2,6 +2,9 @@
 
 A terminal themed portfolio website built with Next.js to showcase my projects, skills, and professional experience.
 
+[![daily-devcard](https://github.com/GregJFlores/Portfolio/actions/workflows/daily-devcard.yml/badge.svg)](https://github.com/GregJFlores/Portfolio/actions/workflows/daily-devcard.yml)
+[![Dependabot Updates](https://github.com/GregJFlores/Portfolio/actions/workflows/dependabot/dependabot-updates/badge.svg)](https://github.com/GregJFlores/Portfolio/actions/workflows/dependabot/dependabot-updates)
+
 ## 🚀 Tech Stack
 
 -   **Framework**: [Next.js 15](https://nextjs.org/)

@@ -63,6 +63,7 @@ const Header = () => {
             {/* Contact Links */}
             <div className="transition-all hidden sm:flex gap-6 text-green-200/90">
                 <ContactLinks />
+                <a rel="me" className="sr-only" href="https://defcon.social/@gregjflores">Mastodon</a>
             </div>
         </div>
     );
