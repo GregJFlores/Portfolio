@@ -79,7 +79,7 @@ const WorkExperienceCard = (props: Props) => {
 
             return duration || "Less than a month";
         },
-        [props.job.startDate, props.job.endDate]
+        [props.job.startDate, props.job.endDate, currentDate]
     );
     return (
         <motion.div
