@@ -1,4 +1,6 @@
-import React, { useCallback } from "react";
+"use client";
+
+import React, { useCallback, useEffect, useState } from "react";
 import { WorkExperienceItem } from "./WorkExperienceGrid";
 import * as motion from "motion/react-client";
 import { RiMapPinFill } from "react-icons/ri";
@@ -11,6 +13,13 @@ type Props = {
 };
 
 const WorkExperienceCard = (props: Props) => {
+
+    const [currentDate, setCurrentDate] = useState<Date | null>(null);
+
+    useEffect(() => {
+        setCurrentDate(new Date());
+    }, []);
+
     const getMonthByAbbreviation = (month: string) => {
         const monthMap: { [key: string]: number } = {
             Jan: 0,
@@ -26,7 +35,7 @@ const WorkExperienceCard = (props: Props) => {
             Nov: 10,
             Dec: 11,
         };
-        return monthMap[month] || -1;
+        return monthMap[month] ?? -1;
     };
     const getYearFromDate = (date: string) => {
         const [month, year] = date.split(" ");
@@ -41,11 +50,17 @@ const WorkExperienceCard = (props: Props) => {
             let duration = "";
 
             if (endDate === "Present") {
-                const currentDate = new Date();
-                const currentYear = currentDate.getFullYear();
-                const currentMonth = currentDate.getMonth();
-                months = (currentYear - startYear) * 12 + (currentMonth - startMonth);
-            } else {
+    if (!currentDate) {
+        return "";
+    }
+
+    const currentYear = currentDate.getFullYear();
+    const currentMonth = currentDate.getMonth();
+
+    months =
+        (currentYear - startYear) * 12 +
+        (currentMonth - startMonth);
+}else {
                 const endYear = getYearFromDate(endDate);
                 const endMonth = getMonthByAbbreviation(endDate.split(" ")[0]);
                 months = (endYear - startYear) * 12 + (endMonth - startMonth);
